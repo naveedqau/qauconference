@@ -96,44 +96,49 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-40 bg-emerald-950/95 backdrop-blur-md border-b border-gold-500/20 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="https://qau.edu.pk"target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full border-2 border-gold-500 bg-white flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
-                        <img src="qau logo.jpg" alt="QAU Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/022c22?text=QAU';">
-                    </div>
-                    <div>
-                        <span class="font-serif font-bold text-lg text-white block tracking-wide group-hover:text-gold-400 transition-colors">QAU ISLAMABAD</span>
-                        <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase block">Jinnah 150 Secretariat</span>
-                    </div>
-                </a>
-
-                <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
-                    <a href="#about" class="text-slate-200 hover:text-gold-400 transition-colors">About</a>
-                    <a href="#schedule" class="text-slate-200 hover:text-gold-400 transition-colors">Schedule & Speakers</a>
-                    <a href="#call-for-papers" class="text-slate-200 hover:text-gold-400 transition-colors">Call for Papers</a>
-                    <a href="#archive" class="text-slate-200 hover:text-gold-400 transition-colors">Archive & Photos</a>
-                    <a href="#partners" class="text-slate-200 hover:text-gold-400 transition-colors">Partners</a>
-                    <a href="#register" class="bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-5 py-2.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all">Register Now</a>
+                        <!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-emerald-950/95 backdrop-blur-md border-b border-gold-500/20 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo & Title Link -->
+            <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-12 h-12 rounded-full border-2 border-gold-500 bg-white flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Quaid-i-Azam_University_logo.png" alt="QAU Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/022c22?text=QAU';">
                 </div>
+                <div>
+                    <span class="font-serif font-bold text-lg text-white block tracking-wide group-hover:text-gold-400 transition-colors">QAU ISLAMABAD</span>
+                    <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase block group-hover:text-gold-300 transition-colors">Jinnah 150 Secretariat</span>
+                </div>
+            </a>
 
-                <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium">
+                <a href="#about" class="text-slate-200 hover:text-gold-400 transition-colors">About</a>
+                <a href="#schedule" class="text-slate-200 hover:text-gold-400 transition-colors">Schedule & Speakers</a>
+                <a href="#speeches" class="text-slate-200 hover:text-gold-400 transition-colors">Speeches & Letters</a>
+                <a href="#call-for-papers" class="text-slate-200 hover:text-gold-400 transition-colors">Call for Papers</a>
+                <a href="#archive" class="text-slate-200 hover:text-gold-400 transition-colors">Photos</a>
+                <a href="#partners" class="text-slate-200 hover:text-gold-400 transition-colors">Partners</a>
+                <a href="#register" class="bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold px-4 py-2 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all">Register Now</a>
             </div>
-        </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-emerald-950 border-b border-emerald-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#about" class="block py-2 text-slate-200 hover:text-gold-400">About Conference</a>
-            <a href="#schedule" class="block py-2 text-slate-200 hover:text-gold-400">Schedule & Speakers</a>
-            <a href="#call-for-papers" class="block py-2 text-slate-200 hover:text-gold-400">Call for Papers</a>
-            <a href="#archive" class="block py-2 text-slate-200 hover:text-gold-400">Archive & Photos</a>
-            <a href="#partners" class="block py-2 text-slate-200 hover:text-gold-400">Partners</a>
-            <a href="#register" class="block w-full text-center bg-gold-500 text-emerald-950 font-bold py-2.5 rounded-lg mt-2">Register Now</a>
+            <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-    </nav>
+    </div>
 
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-emerald-950 border-b border-emerald-800 px-4 pt-2 pb-6 space-y-3">
+        <a href="#about" class="block py-2 text-slate-200 hover:text-gold-400">About Conference</a>
+        <a href="#schedule" class="block py-2 text-slate-200 hover:text-gold-400">Schedule & Speakers</a>
+        <a href="#speeches" class="block py-2 text-slate-200 hover:text-gold-400">Speeches & Letters</a>
+        <a href="#call-for-papers" class="block py-2 text-slate-200 hover:text-gold-400">Call for Papers</a>
+        <a href="#archive" class="block py-2 text-slate-200 hover:text-gold-400">Photos & Archives</a>
+        <a href="#partners" class="block py-2 text-slate-200 hover:text-gold-400">Partners</a>
+        <a href="#register" class="block w-full text-center bg-gold-500 text-emerald-950 font-bold py-2.5 rounded-lg mt-2">Register Now</a>
+    </div>
+</nav>
     <!-- Hero Section -->
     <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-10 lg:py-14 hero-emerald-bg">
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -425,6 +430,69 @@
             </div>
         </div>
     </section>
+        <!-- Speeches & Letters Section -->
+<section id="speeches" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-gold-600 font-serif font-bold text-sm tracking-wider uppercase">Historic Archives</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Selected Speeches & Correspondence</h2>
+            <p class="text-slate-600 text-sm mt-3">Explore landmark policy addresses, constitutional speeches, and diplomatic letters of Quaid-e-Azam Muhammad Ali Jinnah.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-gold-500 transition-all shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-emerald-950 text-gold-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-scroll"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-wider">August 11, 1947</span>
+                    <h3 class="font-serif font-bold text-navy-900 text-xl mt-1 mb-3">Address to the Constituent Assembly</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        "You are free; you are free to go to your temples, you are free to go to your mosques or to any other place of worship in this State of Pakistan..."
+                    </p>
+                </div>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/3/3d/Jinnah_and_Mountbatten_14_August_1947.jpg" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-950 hover:text-gold-600 transition-colors">
+                    Read Transcript <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-gold-500 transition-all shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-emerald-950 text-gold-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-wider">March 23, 1940</span>
+                    <h3 class="font-serif font-bold text-navy-900 text-xl mt-1 mb-3">The Presidential Address at Lahore</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        The historic discourse outlining the constitutional framework, democratic rights, and political destiny of Muslims in South Asia.
+                    </p>
+                </div>
+                <a href="#" onclick="alert('Full archival text will be available in the conference booklet.')" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-950 hover:text-gold-600 transition-colors">
+                    Read Transcript <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-gold-500 transition-all shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="w-10 h-10 rounded-lg bg-emerald-950 text-gold-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-wider">November 27, 1947</span>
+                    <h3 class="font-serif font-bold text-navy-900 text-xl mt-1 mb-3">All Pakistan Educational Conference Message</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        "Education is a matter of life and death for Pakistan... We must build up the character of our future generations."
+                    </p>
+                </div>
+                <a href="#" onclick="alert('Full archival text will be available in the conference booklet.')" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-950 hover:text-gold-600 transition-colors">
+                    Read Transcript <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Photo Archive Section -->
     <section id="archive" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
