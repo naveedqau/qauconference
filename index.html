@@ -849,5 +849,51 @@
         if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
     }
 </script>
+    <script>
+    // ==========================================
+    // QUOTE CAROUSEL SLIDER
+    // ==========================================
+    const quotes = [
+        {
+            text: "Unity, Faith, and Discipline are our cardinal principles. With selfless devotion to duty, there is nothing worthwhile that you cannot achieve.",
+            author: "— Quaid-e-Azam Muhammad Ali Jinnah (Address to Officers, 1948)"
+        },
+        {
+            text: "You are free; you are free to go to your temples, you are free to go to your mosques or to any other place of worship in this State of Pakistan.",
+            author: "— Quaid-e-Azam Muhammad Ali Jinnah (Address to Constituent Assembly, August 11, 1947)"
+        },
+        {
+            text: "My message to you all is of hope, courage and confidence. Let us mobilize our resources in a systematic and organized way and tackle the grave issues that confront us with grim determination.",
+            author: "— Quaid-e-Azam Muhammad Ali Jinnah (Broadcast to the Nation, 1947)"
+        }
+    ];
+    
+    let currentQuoteIndex = 0;
+
+    function showQuote(index) {
+        const textElem = document.getElementById('quote-text');
+        const authorElem = document.getElementById('quote-author');
+        if (textElem && authorElem) {
+            textElem.style.opacity = 0;
+            authorElem.style.opacity = 0;
+            setTimeout(() => {
+                textElem.innerText = `"${quotes[index].text}"`;
+                authorElem.innerText = quotes[index].author;
+                textElem.style.opacity = 1;
+                authorElem.style.opacity = 1;
+            }, 200);
+        }
+    }
+
+    function nextQuote() {
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        showQuote(currentQuoteIndex);
+    }
+
+    function prevQuote() {
+        currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+        showQuote(currentQuoteIndex);
+    }
+</script>
 </body>
 </html>
