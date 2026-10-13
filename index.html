@@ -680,147 +680,61 @@
         </div>
     </div>
 
-    <script>
-    // ==========================================
-    // 1. SUPABASE INITIALIZATION
-    // ==========================================
-    const SUPABASE_URL = 'https://your-project-id.supabase.co'; // Insert your Supabase URL here
-    const SUPABASE_ANON_KEY = 'your-anon-key-here';            // Insert your Supabase Anon Key here
-    let supabase = null;
+ <script>
+    // 1. COUNTDOWN TIMER FIX
+    const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
 
-    if (window.supabase && SUPABASE_URL !== 'https://your-project-id.supabase.co') {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = conferenceDate - now;
 
-    // ==========================================
-    // 2. MOBILE MENU & MODAL HANDLERS
-    // ==========================================
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        if (menu) menu.classList.toggle('hidden');
-    }
-
-    function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (modal) modal.classList.remove('hidden');
-    }
-
-    function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (modal) modal.classList.add('hidden');
-    }
-
-    // ==========================================
-    // 3. COUNTDOWN TIMER FUNCTIONALITY
-    // ==========================================
-    function startCountdown() {
-        // Target: December 23, 2026 at 09:00 AM
-        const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = conferenceDate - now;
-
+        if (distance > 0) {
             const daysElem = document.getElementById('days');
             const hoursElem = document.getElementById('hours');
             const minutesElem = document.getElementById('minutes');
             const secondsElem = document.getElementById('seconds');
 
-            if (distance > 0) {
-                if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-                if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-                if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-                if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-            } else {
-                if (daysElem) daysElem.innerText = "00";
-                if (hoursElem) hoursElem.innerText = "00";
-                if (minutesElem) minutesElem.innerText = "00";
-                if (secondsElem) secondsElem.innerText = "00";
-            }
+            if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
         }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
     }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-    // Run countdown when DOM content is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', startCountdown);
-    } else {
-        startCountdown();
-    }
-
-    // ==========================================
-    // 4. SCHEDULE TABS SWITCHER
-    // ==========================================
+    // 2. SCHEDULE TABS SWITCHER FIX
     function showSchedule(dayId) {
-        document.querySelectorAll('.schedule-content').forEach(el => {
-            el.classList.add('hidden');
-        });
-        
+        document.querySelectorAll('.schedule-content').forEach(el => el.classList.add('hidden'));
         document.querySelectorAll('.schedule-tab').forEach(btn => {
             btn.classList.remove('text-gold-600', 'border-gold-500');
             btn.classList.add('text-navy-900/60', 'border-transparent');
         });
-        
         const targetContent = document.getElementById(dayId);
         const targetBtn = document.getElementById('btn-' + dayId);
-        
         if (targetContent) targetContent.classList.remove('hidden');
         if (targetBtn) {
             targetBtn.classList.add('text-gold-600', 'border-gold-500');
             targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
         }
     }
-
+</script>
+<script>
     // ==========================================
-    // 5. QUOTES CAROUSEL
+    // SUPABASE CONFIGURATION & SUBMISSIONS
     // ==========================================
-    const quotes = [
-        {
-            text: '"Unity, Faith, and Discipline are our cardinal principles. With selfless devotion to duty, there is nothing worthwhile that you cannot achieve."',
-            author: '— Quaid-e-Azam Muhammad Ali Jinnah (Address to Officers, 1948)'
-        },
-        {
-            text: '"Democracy is in the blood of the Muslims, who look upon complete equality of mankind, and believe in fraternity, equality, and liberty."',
-            author: '— Quaid-e-Azam Muhammad Ali Jinnah (Speech at London, 1946)'
-        },
-        {
-            text: '"Education is a matter of life and death for Pakistan. The world is moving so fast that if you do not educate yourselves you will be completely left behind."',
-            author: '— Quaid-e-Azam Muhammad Ali Jinnah (All Pakistan Educational Conference, 1947)'
-        }
-    ];
-    let currentQuoteIndex = 0;
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';       // Replace with your actual project URL
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE'; // Replace with your actual anon key
+    let supabase = null;
 
-    function updateQuote() {
-        const textElem = document.getElementById('quote-text');
-        const authorElem = document.getElementById('quote-author');
-        if (textElem && authorElem) {
-            textElem.innerText = quotes[currentQuoteIndex].text;
-            authorElem.innerText = quotes[currentQuoteIndex].author;
-        }
+    if (window.supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE') {
+        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     }
 
-    function nextQuote() {
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        updateQuote();
-    }
-
-    function prevQuote() {
-        currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
-        updateQuote();
-    }
-
-    // ==========================================
-    // 6. SUPABASE FORM SUBMISSIONS
-    // ==========================================
     async function handleDelegateSubmit(e) {
         e.preventDefault();
         const btn = document.getElementById('reg-btn');
-        if (btn) {
-            btn.disabled = true;
-            btn.innerText = 'Submitting...';
-        }
+        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
 
         const payload = {
             full_name: document.getElementById('reg-name')?.value,
@@ -833,30 +747,24 @@
         if (supabase) {
             const { error } = await supabase.from('delegate_registrations').insert([payload]);
             if (error) {
-                alert('Error submitting registration: ' + error.message);
+                alert('Error: ' + error.message);
             } else {
                 alert('Registration pass request submitted successfully!');
                 closeModal('register-modal');
                 document.getElementById('delegate-form')?.reset();
             }
         } else {
-            alert('Form submitted! (Note: Please add valid Supabase keys to save directly to database)');
+            alert('Supabase credentials required to save to database.');
             closeModal('register-modal');
         }
 
-        if (btn) {
-            btn.disabled = false;
-            btn.innerText = 'Submit Registration';
-        }
+        if (btn) { btn.disabled = false; btn.innerText = 'Submit Registration'; }
     }
 
     async function handleAbstractSubmit(e) {
         e.preventDefault();
         const btn = document.getElementById('abs-btn');
-        if (btn) {
-            btn.disabled = true;
-            btn.innerText = 'Submitting...';
-        }
+        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
 
         const payload = {
             author_name: document.getElementById('abs-author')?.value,
@@ -870,21 +778,18 @@
         if (supabase) {
             const { error } = await supabase.from('abstract_submissions').insert([payload]);
             if (error) {
-                alert('Error submitting abstract: ' + error.message);
+                alert('Error: ' + error.message);
             } else {
                 alert('Paper abstract submitted successfully!');
                 closeModal('abstract-modal');
                 document.getElementById('abstract-form')?.reset();
             }
         } else {
-            alert('Abstract submitted! (Note: Please add valid Supabase keys to save directly to database)');
+            alert('Supabase credentials required to save to database.');
             closeModal('abstract-modal');
         }
 
-        if (btn) {
-            btn.disabled = false;
-            btn.innerText = 'Submit Abstract';
-        }
+        if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
     }
 </script>
 </body>
