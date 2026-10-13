@@ -90,15 +90,6 @@
             animation: float 6s ease-in-out infinite;
         }
     </style>
-    <style>
-        @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-    .animate-marquee:hover {
-        animation-play-state: paused;
-    }
-</style>
 </head>
 <body class="bg-ivory-50 text-navy-900 font-sans antialiased custom-scrollbar">
 
@@ -224,7 +215,7 @@
                 </div>
             </div>
 
-            <!-- Countdown Timer Panel (With Exact IDs) -->
+            <!-- Countdown Timer Panel -->
             <div class="glass-panel max-w-3xl mx-auto rounded-3xl p-6 border border-gold-500/40 shadow-2xl">
                 <div class="text-center mb-4">
                     <span class="text-xs font-bold text-gold-400 tracking-widest uppercase">Opening Ceremony Countdown</span>
@@ -286,7 +277,7 @@
                     Preserving Legacy, Guiding Modern Statehood at QAU
                 </h2>
                 <p class="text-navy-900/80 leading-relaxed mb-4 text-sm sm:text-base">
-                    Quaid-i-Azam University (QAU), Pakistan's premier seat of higher learning, proudly convenes an international academic conference celebrating the <strong>150th Birth Anniversary</strong> of the Founder of the Nation, Quaid-e-Azam Muhammad Ali Jinnah.
+                    Quaid-i-Azam University (QAU), Pakistan's premier seat of higher learning, proudly convenes an international academic conference celebrating the <strong>150th Birth Anniversary</strong> of the Founder of the Nation, Quaid-e-Azam Muhammad Ali Jinnah[cite: 3].
                 </p>
                 <p class="text-navy-900/80 leading-relaxed mb-6 text-sm sm:text-base">
                     This global symposium invites eminent historians, constitutional experts, political analysts, and researchers to re-examine Jinnah's vision for democratic governance, institutional integrity, human rights, and peaceful international diplomacy in South Asia.
@@ -305,7 +296,45 @@
             </div>
 
             <!-- Call for Papers Block -->
-            <!-- Abstract Submission Modal -->
+            <div id="call-for-papers" class="bg-emerald-950 text-ivory-50 p-8 sm:p-10 rounded-3xl border-2 border-gold-500/40 shadow-2xl relative overflow-hidden">
+                <span class="bg-gold-500/20 text-gold-300 text-[10px] font-bold px-3 py-1 rounded-full border border-gold-500/30 uppercase tracking-widest inline-block mb-3">Academic Call</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-gold-400 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-bullhorn text-gold-500"></i> Call for Research Papers
+                </h3>
+                
+                <p class="text-ivory-200 text-xs sm:text-sm mb-6">We invite original research paper submissions under the following official sub-themes:</p>
+                
+                <ul class="space-y-3.5 text-xs sm:text-sm text-ivory-100 mb-8">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                        <span><strong>Constitutionalism & Rule of Law:</strong> Jinnah's Legal Philosophy & Jurisprudence</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                        <span><strong>Foreign Policy & Peace:</strong> Diplomatic Foresight for Regional Stability</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                        <span><strong>Education & Youth Empowerment:</strong> Memorial Lectures & Educational Reform</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                        <span><strong>Minority Rights & Inclusion:</strong> The Historic August 11, 1947 Framework</span>
+                    </li>
+                </ul>
+
+                <div class="space-y-2 mb-8 text-xs text-gold-300 bg-emerald-900/90 p-4 rounded-2xl border border-gold-500/30">
+                    <div class="flex justify-between border-b border-emerald-800 pb-1.5"><span>Abstract Submission Deadline:</span> <strong class="text-ivory-50">October 15, 2026</strong></div>
+                    <div class="flex justify-between border-b border-emerald-800 py-1.5"><span>Full Paper Submission:</span> <strong class="text-ivory-50">November 15, 2026</strong></div>
+                    <div class="flex justify-between pt-1.5"><span>Acceptance Notification:</span> <strong class="text-ivory-50">December 01, 2026</strong></div>
+                </div>
+
+                <button type="button" onclick="openModal('abstract-modal')" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-4 rounded-xl text-sm transition-all shadow-lg cursor-pointer">
+                    Submit Abstract Online
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Schedule & Keynote Speakers Section -->
     <section id="schedule" class="py-20 bg-ivory-100 border-t border-b border-gold-500/20">
@@ -313,11 +342,11 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-gold-600 font-serif font-bold text-xs tracking-widest uppercase">Eminent Luminaries</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-2">Keynote Speakers & Program Schedule</h2>
-                <p class="text-navy-900/70 text-xs sm:text-sm mt-3">Distinguished international historians, legal scholars, and statesmen attending the 150th Anniversary Conference.</p>
+                <p class="text-navy-900/70 text-xs sm:text-sm mt-3">Distinguished international historians, legal scholars, and statesmen attending the 150th Anniversary Conference[cite: 3].</p>
             </div>
 
-            <!-- Keynote Speakers Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Keynote Speakers Grid (8 Speakers) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-white border border-gold-500/30 rounded-2xl p-5 text-center group hover:border-gold-500 shadow-sm transition-all hover:-translate-y-1">
                     <img src="Dr. Zafar Nawaz.jpg" alt="Prof. Dr. Zafar" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+1'">
                     <h3 class="font-serif font-bold text-emerald-950 text-base">Prof. Dr. Zafar Nawaz Jaspal</h3>
@@ -346,37 +375,36 @@
                     <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "Jinnah's Sole Spokesman Legacy"</p>
                 </div>
             </div>
-            <!-- Keynote Speakers Grid -->
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                 <div class="bg-white border border-gold-500/30 rounded-2xl p-5 text-center group hover:border-gold-500 shadow-sm transition-all hover:-translate-y-1">
-                    <img src="rao.jpg" alt="Prof. Dr. Zafar" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+1'">
+                    <img src="rao.jpg" alt="Dr. Samar Iqbal Babar" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+5'">
                     <h3 class="font-serif font-bold text-emerald-950 text-base">Dr. Samar Iqbal Babar</h3>
                     <p class="text-gold-600 text-xs font-semibold mb-2">Quaid-i-Azam University</p>
-                    <p class="text-navy-900/70 text-xs leading-relaxed">Orginazar </p>
+                    <p class="text-navy-900/70 text-xs leading-relaxed">Organizer</p>
                 </div>
 
                 <div class="bg-white border border-gold-500/30 rounded-2xl p-5 text-center group hover:border-gold-500 shadow-sm transition-all hover:-translate-y-1">
-                    <img src="ilhan.jpg" alt="Dr. Bushra Mirza" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+2'">
+                    <img src="ilhan.jpg" alt="Dr. Ilhan Niaz" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+6'">
                     <h3 class="font-serif font-bold text-emerald-950 text-base">Dr. Ilhan Niaz</h3>
-                    <p class="text-gold-600 text-xs font-semibold mb-2">Quaid-i-Azam University </p>
+                    <p class="text-gold-600 text-xs font-semibold mb-2">Quaid-i-Azam University</p>
                     <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "Jinnah, Pakistan and Democratic Identity"</p>
                 </div>
 
                 <div class="bg-white border border-gold-500/30 rounded-2xl p-5 text-center group hover:border-gold-500 shadow-sm transition-all hover:-translate-y-1">
-                    <img src="ayesha.jpg" alt="Prof. Dr. Farooq Ahmed Dar" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+3'">
-                    <h3 class="font-serif font-bold text-emerald-950 text-base">Dr.Ayesha Anees Malik</h3>
+                    <img src="ayesha.jpg" alt="Dr. Ayesha Anees Malik" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+7'">
+                    <h3 class="font-serif font-bold text-emerald-950 text-base">Dr. Ayesha Anees Malik</h3>
                     <p class="text-gold-600 text-xs font-semibold mb-2">Centre of Excellence in Gender Studies</p>
-                    <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "The Constitutional Journey to 1947"</p>
+                    <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "Gender Perspectives & Statehood"</p>
                 </div>
 
                 <div class="bg-white border border-gold-500/30 rounded-2xl p-5 text-center group hover:border-gold-500 shadow-sm transition-all hover:-translate-y-1">
-                    <img src="Maleeha.jpg" alt="Dr. Sajid Mehmood Awan" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=VC+QAU'">
+                    <img src="Maleeha.jpg" alt="Maleeha Lodhi" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-gold-500" onerror="this.src='https://placehold.co/150x150/003a25/ffffff?text=Scholar+8'">
                     <h3 class="font-serif font-bold text-emerald-950 text-base">Maleeha Lodhi</h3>
-                    <p class="text-gold-600 text-xs font-semibold mb-2">Former Permanent Representative of Pakistan to the United Nations</p>
-                    <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "Jinnah's Sole Spokesman Legacy"</p>
+                    <p class="text-gold-600 text-xs font-semibold mb-2">Former UN Representative</p>
+                    <p class="text-navy-900/70 text-xs leading-relaxed">Keynote: "Jinnah's Diplomacy in Modern World"</p>
                 </div>
             </div>
-
 
             <!-- Schedule Tabs -->
             <div class="flex border-b-2 border-gold-500/30 mb-8 overflow-x-auto pb-1">
@@ -447,7 +475,7 @@
         </div>
     </section>
 
-    <!-- Photo Archives Section (#archive) -->
+    <!-- Photo Archives Section -->
     <section id="archive" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-gold-600 font-serif font-bold text-xs tracking-widest uppercase">Historical Heritage</span>
@@ -483,132 +511,119 @@
         </div>
     </section>
 
-        <!-- Partners & Sponsors Section -->
-<section id="partners" class="py-20 bg-emerald-950 text-ivory-50 border-t border-b border-gold-500/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-gold-400 font-serif font-bold text-xs tracking-widest uppercase">Collaborators & Supporters</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-300 mt-2">10 Partner Organizations</h2>
-            <p class="text-ivory-200 text-xs sm:text-sm mt-3">Organized under the patronage of premier national academic, historical, and government institutions.</p>
+    <!-- Partners & Sponsors Section -->
+    <section id="partners" class="py-20 bg-emerald-950 text-ivory-50 border-t border-b border-gold-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-serif font-bold text-xs tracking-widest uppercase">Collaborators & Supporters</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-300 mt-2">10 Partner Organizations</h2>
+                <p class="text-ivory-200 text-xs sm:text-sm mt-3">Organized under the patronage of premier national academic, historical, and government institutions[cite: 3].</p>
+            </div>
+
+            <!-- Spacious 5-Column Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="hec-logo.png" alt="HEC" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=HEC';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">HEC Pakistan</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Partner</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="fatima.jpg" alt="FJWU" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=FJWU';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Fatima Jinnah Women University</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Academic Patron</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="Heritage.jpeg" alt="Heritage" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Heritage';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">National Heritage Division</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Research Partner</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="planning.jpg" alt="Planning" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Planning';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Ministry of Planning & Development</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Academic Partner</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner5.png" alt="Archives" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Archives';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">National Archives</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Documentary Patron</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner6.png" alt="Ministry of Heritage" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Heritage';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Ministry of Heritage</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Government Sponsor</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner7.png" alt="Letters" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Letters';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Academy of Letters</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Literary Partner</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner8.png" alt="BNU Lahore" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=BNU';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">BNU Lahore</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Collaborating Univ.</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner9.png" alt="IIPS" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=IIPS';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">IIPS Policy Inst.</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Policy Partner</span>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
+                    <div class="h-14 flex items-center justify-center mb-3">
+                        <img src="partner10.png" alt="Jinnah Chair" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Jinnah+Chair';">
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Jinnah Chair QAU</h4>
+                        <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Chair Secretariat</span>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Spacious 5-Column Grid (Ensures no text wrapping or overlapping) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-            
-            <!-- Partner 1 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="hec-logo.png" alt="QAU" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=QAU';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">HEC Pakistan</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Patner</span>
-                </div>
-            </div>
-
-            <!-- Partner 2 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="fatima.jpg" alt="HEC" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=HEC';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Fatima Jinnah Women University</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Academic Patron</span>
-                </div>
-            </div>
-
-            <!-- Partner 3 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="Heritage.jpeg" alt="NIHCR" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=NIHCR';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">National Heritage and Culture Division</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Research Partner</span>
-                </div>
-            </div>
-
-            <!-- Partner 4 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="planning.jpg" alt="FJWU" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=FJWU';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Ministry of Planning,Development & Special Initiatives</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Academic Partner</span>
-                </div>
-            </div>
-
-            <!-- Partner 5 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner5.png" alt="National Archives" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Archives';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">National Archives</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Documentary Patron</span>
-                </div>
-            </div>
-
-            <!-- Partner 6 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner6.png" alt="Ministry of Heritage" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Heritage';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Ministry of Heritage</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Government Sponsor</span>
-                </div>
-            </div>
-
-            <!-- Partner 7 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner7.png" alt="Academy of Letters" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Letters';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Academy of Letters</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Literary Partner</span>
-                </div>
-            </div>
-
-            <!-- Partner 8 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner8.png" alt="BNU Lahore" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=BNU';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">BNU Lahore</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Collaborating Univ.</span>
-                </div>
-            </div>
-
-            <!-- Partner 9 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner9.png" alt="IIPS" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=IIPS';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">IIPS Policy Inst.</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Policy Partner</span>
-                </div>
-            </div>
-
-            <!-- Partner 10 -->
-            <div class="bg-emerald-900/90 border border-gold-500/40 rounded-2xl p-6 text-center shadow-lg hover:border-gold-400 hover:bg-emerald-900 transition-all flex flex-col items-center justify-between min-h-[170px]">
-                <div class="h-14 flex items-center justify-center mb-3">
-                    <img src="partner10.png" alt="Jinnah Chair" class="max-h-full max-w-full object-contain filter brightness-110" onerror="this.src='https://placehold.co/100x60/003a25/ffffff?text=Jinnah+Chair';">
-                </div>
-                <div>
-                    <h4 class="font-serif text-gold-300 font-bold text-xs leading-tight mb-1">Jinnah Chair QAU</h4>
-                    <span class="text-[10px] text-ivory-300 tracking-wide block uppercase">Chair Secretariat</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Footer Section -->
     <footer class="bg-navy-950 text-ivory-200 py-12 border-t border-gold-500/30 text-xs">
@@ -619,120 +634,220 @@
         </div>
     </footer>
 
-    <!-- Modals -->
-   <!-- Delegate Registration Modal -->
+    <!-- MODALS SECTION (RESTORED) -->
+    <!-- Delegate Registration Modal -->
+    <div id="register-modal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-ivory-50 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button type="button" onclick="closeModal('register-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-gold-400 mb-2">Register Delegate Pass</h3>
+            <form id="delegate-form" onsubmit="handleDelegateSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Full Name *</label>
+                    <input type="text" id="reg-name" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
+                    <input type="email" id="reg-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Phone Number</label>
+                    <input type="tel" id="reg-phone" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Registration Type</label>
+                    <select id="reg-type" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                        <option value="Delegate">Conference Delegate</option>
+                        <option value="Student">Student Observer</option>
+                        <option value="Researcher">Presenter / Researcher</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Institution / University</label>
+                    <input type="text" id="reg-institution" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <button type="submit" id="reg-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer">
+                    Submit Registration
+                </button>
+            </form>
+        </div>
+    </div>
 
- <script>
-    // 1. COUNTDOWN TIMER FIX
-    const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
+    <!-- Abstract Submission Modal -->
+    <div id="abstract-modal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-ivory-50 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button type="button" onclick="closeModal('abstract-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-gold-400 mb-2">Submit Research Abstract</h3>
+            <form id="abstract-form" onsubmit="handleAbstractSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Author Name *</label>
+                    <input type="text" id="abs-author" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
+                    <input type="email" id="abs-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Institution *</label>
+                    <input type="text" id="abs-institution" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Paper Title *</label>
+                    <input type="text" id="abs-title" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Sub-Theme *</label>
+                    <select id="abs-theme" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                        <option value="">Select Sub-Theme</option>
+                        <option value="Constitutionalism">Constitutionalism & Rule of Law</option>
+                        <option value="Foreign Policy">Foreign Policy & Peace</option>
+                        <option value="Education">Education & Youth Empowerment</option>
+                        <option value="Minority Rights">Minority Rights & Inclusion</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Abstract Text *</label>
+                    <textarea id="abs-text" rows="4" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+                <button type="submit" id="abs-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer">
+                    Submit Abstract
+                </button>
+            </form>
+        </div>
+    </div>
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = conferenceDate - now;
-
-        if (distance > 0) {
-            const daysElem = document.getElementById('days');
-            const hoursElem = document.getElementById('hours');
-            const minutesElem = document.getElementById('minutes');
-            const secondsElem = document.getElementById('seconds');
-
-            if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+    <!-- SCRIPTS SECTION -->
+    <script>
+        // 1. MOBILE MENU & MODAL HANDLERS
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
         }
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
 
-    // 2. SCHEDULE TABS SWITCHER FIX
-    function showSchedule(dayId) {
-        document.querySelectorAll('.schedule-content').forEach(el => el.classList.add('hidden'));
-        document.querySelectorAll('.schedule-tab').forEach(btn => {
-            btn.classList.remove('text-gold-600', 'border-gold-500');
-            btn.classList.add('text-navy-900/60', 'border-transparent');
-        });
-        const targetContent = document.getElementById(dayId);
-        const targetBtn = document.getElementById('btn-' + dayId);
-        if (targetContent) targetContent.classList.remove('hidden');
-        if (targetBtn) {
-            targetBtn.classList.add('text-gold-600', 'border-gold-500');
-            targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.remove('hidden');
         }
-    }
-</script>
-<script>
-    // ==========================================
-    // SUPABASE CONFIGURATION & SUBMISSIONS
-    // ==========================================
-    const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';       // Replace with your actual project URL
-    const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; // Replace with your actual anon key
-    let supabase = null;
 
-    if (window.supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE') {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.add('hidden');
+        }
 
-    async function handleDelegateSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById('reg-btn');
-        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
+        // 2. COUNTDOWN TIMER FIX
+        const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
 
-        const payload = {
-            full_name: document.getElementById('reg-name')?.value,
-            email: document.getElementById('reg-email')?.value,
-            phone: document.getElementById('reg-phone')?.value,
-            registration_type: document.getElementById('reg-type')?.value,
-            institution: document.getElementById('reg-institution')?.value
-        };
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = conferenceDate - now;
 
-        if (supabase) {
-            const { error } = await supabase.from('delegate_registrations').insert([payload]);
-            if (error) {
-                alert('Error: ' + error.message);
+            if (distance > 0) {
+                const daysElem = document.getElementById('days');
+                const hoursElem = document.getElementById('hours');
+                const minutesElem = document.getElementById('minutes');
+                const secondsElem = document.getElementById('seconds');
+
+                if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. SCHEDULE TABS SWITCHER FIX
+        function showSchedule(dayId) {
+            document.querySelectorAll('.schedule-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.schedule-tab').forEach(btn => {
+                btn.classList.remove('text-gold-600', 'border-gold-500');
+                btn.classList.add('text-navy-900/60', 'border-transparent');
+            });
+            const targetContent = document.getElementById(dayId);
+            const targetBtn = document.getElementById('btn-' + dayId);
+            if (targetContent) targetContent.classList.remove('hidden');
+            if (targetBtn) {
+                targetBtn.classList.add('text-gold-600', 'border-gold-500');
+                targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
+            }
+        }
+    </script>
+
+    <script>
+        // ==========================================
+        // SUPABASE CONFIGURATION & SUBMISSIONS
+        // ==========================================
+        const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';       
+        const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; 
+        let supabase = null;
+
+        if (window.supabase) {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        }
+
+        async function handleDelegateSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('reg-btn');
+            if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
+
+            const payload = {
+                full_name: document.getElementById('reg-name')?.value,
+                email: document.getElementById('reg-email')?.value,
+                phone: document.getElementById('reg-phone')?.value,
+                registration_type: document.getElementById('reg-type')?.value,
+                institution: document.getElementById('reg-institution')?.value
+            };
+
+            if (supabase) {
+                const { error } = await supabase.from('delegate_registrations').insert([payload]);
+                if (error) {
+                    alert('Error: ' + error.message);
+                } else {
+                    alert('Registration pass request submitted successfully!');
+                    closeModal('register-modal');
+                    document.getElementById('delegate-form')?.reset();
+                }
             } else {
-                alert('Registration pass request submitted successfully!');
+                alert('Supabase client not initialized.');
                 closeModal('register-modal');
-                document.getElementById('delegate-form')?.reset();
             }
-        } else {
-            alert('Supabase credentials required to save to database.');
-            closeModal('register-modal');
+
+            if (btn) { btn.disabled = false; btn.innerText = 'Submit Registration'; }
         }
 
-        if (btn) { btn.disabled = false; btn.innerText = 'Submit Registration'; }
-    }
+        async function handleAbstractSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('abs-btn');
+            if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
 
-    async function handleAbstractSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById('abs-btn');
-        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
+            const payload = {
+                author_name: document.getElementById('abs-author')?.value,
+                email: document.getElementById('abs-email')?.value,
+                institution: document.getElementById('abs-institution')?.value,
+                paper_title: document.getElementById('abs-title')?.value,
+                sub_theme: document.getElementById('abs-theme')?.value,
+                abstract_text: document.getElementById('abs-text')?.value
+            };
 
-        const payload = {
-            author_name: document.getElementById('abs-author')?.value,
-            email: document.getElementById('abs-email')?.value,
-            institution: document.getElementById('abs-institution')?.value,
-            paper_title: document.getElementById('abs-title')?.value,
-            sub_theme: document.getElementById('abs-theme')?.value,
-            abstract_text: document.getElementById('abs-text')?.value
-        };
-
-        if (supabase) {
-            const { error } = await supabase.from('abstract_submissions').insert([payload]);
-            if (error) {
-                alert('Error: ' + error.message);
+            if (supabase) {
+                const { error } = await supabase.from('abstract_submissions').insert([payload]);
+                if (error) {
+                    alert('Error: ' + error.message);
+                } else {
+                    alert('Paper abstract submitted successfully!');
+                    closeModal('abstract-modal');
+                    document.getElementById('abstract-form')?.reset();
+                }
             } else {
-                alert('Paper abstract submitted successfully!');
+                alert('Supabase client not initialized.');
                 closeModal('abstract-modal');
-                document.getElementById('abstract-form')?.reset();
             }
-        } else {
-            alert('Supabase credentials required to save to database.');
-            closeModal('abstract-modal');
-        }
 
-        if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
-    }
-</script>
+            if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
+        }
+    </script>
 </body>
 </html>
