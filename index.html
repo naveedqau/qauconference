@@ -90,6 +90,15 @@
             animation: float 6s ease-in-out infinite;
         }
     </style>
+    <style>
+        @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+</style>
 </head>
 <body class="bg-ivory-50 text-navy-900 font-sans antialiased custom-scrollbar">
 
@@ -512,69 +521,98 @@
         </div>
     </section>
 
-    <!-- Partners & Sponsors Section -->
-<section id="partners" class="py-20 bg-emerald-950 text-ivory-50 border-t border-gold-500/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-gold-400 font-serif font-bold text-xs tracking-widest uppercase">Collaborators & Supporters</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-300 mt-2">10 Partner Organizations</h2>
-            <p class="text-ivory-200 text-xs sm:text-sm mt-3">Organized under the patronage of premier national academic, historical, and government institutions.</p>
+        <!-- Partners & Sponsors Section -->
+        <!-- Beautiful Marquee Partners & Sponsors Section -->
+    <section id="partners" class="py-20 bg-ivory-100 border-t border-b border-gold-500/30 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+            <span class="text-gold-600 font-serif font-bold text-xs tracking-widest uppercase">Global Academic Patronage</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-2">Our Esteemed Partners & Sponsors</h2>
+            <p class="text-navy-900/70 text-xs sm:text-sm mt-3 max-w-2xl mx-auto">Proudly organized in collaboration with Pakistan's premier higher education, research, and national institutions.</p>
         </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner1.png" alt="QAU" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=QAU';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">QAU Islamabad</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Host University</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner2.png" alt="HEC" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=HEC';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">HEC Pakistan</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Academic Patron</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner3.png" alt="NIHCR" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=NIHCR';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">NIHCR</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Research Partner</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner4.png" alt="FJWU" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=FJWU';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">Fatima Jinnah Univ</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Academic Partner</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner5.png" alt="Archives" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=Archives';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">National Archives</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Documentary Patron</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner6.png" alt="Heritage" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=Heritage';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">Ministry of Heritage</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Government Sponsor</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner7.png" alt="Letters" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=Letters';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">Academy of Letters</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Literary Partner</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner8.png" alt="BNU" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=BNU';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">BNU Lahore</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Collaborating Univ.</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner9.png" alt="IIPS" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=IIPS';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">IIPS Policy Inst.</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Policy Partner</p>
-            </div>
-            <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 hover:bg-emerald-900/90 transition-all shadow-lg group">
-                <img src="partner10.png" alt="Jinnah Chair" class="h-14 mx-auto object-contain mb-3 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=Jinnah+Chair';">
-                <h4 class="font-serif text-gold-300 font-bold text-xs">Jinnah Chair QAU</h4>
-                <p class="text-ivory-300 text-[10px] mt-1">Chair Secretariat</p>
+    
+        <!-- Infinite Scrolling Marquee Wrapper -->
+        <div class="relative w-full overflow-hidden py-4">
+            <!-- Gradient Fades on Edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-ivory-100 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-ivory-100 to-transparent z-10 pointer-events-none"></div>
+    
+            <div class="flex gap-8 animate-marquee whitespace-nowrap items-center py-2" style="animation: scroll 35s linear infinite;">
+                
+                <!-- Partner 1 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner1.png" alt="QAU" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=QAU';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">QAU Islamabad</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Host University</span>
+                </div>
+    
+                <!-- Partner 2 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner2.png" alt="HEC" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=HEC';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">HEC Pakistan</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Academic Patron</span>
+                </div>
+    
+                <!-- Partner 3 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner3.png" alt="NIHCR" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=NIHCR';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">NIHCR</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Research Partner</span>
+                </div>
+    
+                <!-- Partner 4 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner4.png" alt="FJWU" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=FJWU';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">Fatima Jinnah Univ</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Academic Partner</span>
+                </div>
+    
+                <!-- Partner 5 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner5.png" alt="Archives" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=Archives';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">National Archives</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Documentary Patron</span>
+                </div>
+    
+                <!-- Partner 6 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner6.png" alt="Heritage" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=Heritage';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">Ministry of Heritage</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Government Sponsor</span>
+                </div>
+    
+                <!-- Partner 7 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner7.png" alt="Letters" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=Letters';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">Academy of Letters</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Literary Partner</span>
+                </div>
+    
+                <!-- Partner 8 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner8.png" alt="BNU" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=BNU';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">BNU Lahore</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Collaborating Univ.</span>
+                </div>
+    
+                <!-- Partner 9 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner9.png" alt="IIPS" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x60/003a25/ffffff?text=IIPS';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">IIPS Policy Inst.</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Policy Partner</span>
+                </div>
+    
+                <!-- Partner 10 -->
+                <div class="inline-flex flex-col items-center justify-center bg-white border border-gold-500/30 rounded-2xl p-6 min-w-[200px] shadow-sm hover:shadow-md hover:border-gold-500 transition-all group">
+                    <img src="partner10.png" alt="Jinnah Chair" class="h-12 w-auto object-contain mb-3 filter grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://placehold.co/120x80/003a25/ffffff?text=Jinnah+Chair';">
+                    <span class="font-serif font-bold text-emerald-950 text-xs">Jinnah Chair QAU</span>
+                    <span class="text-[10px] text-navy-900/60 mt-0.5">Chair Secretariat</span>
+                </div>
+    
             </div>
         </div>
-    </div>
 </section>
+
+
 
     <!-- Footer Section -->
     <footer class="bg-navy-950 text-ivory-200 py-12 border-t border-gold-500/30 text-xs">
