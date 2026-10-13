@@ -820,5 +820,138 @@
             if (btn) { btn.disabled = false; btn.innerText = 'Submit Registration'; }
         }
     </script>
+    <script>
+    // ==========================================
+    // 1. MOBILE MENU & MODAL HANDLERS
+    // ==========================================
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.toggle('hidden');
+    }
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.classList.add('hidden');
+    }
+
+    // ==========================================
+    // 2. COUNTDOWN TIMER
+    // ==========================================
+    const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = conferenceDate - now;
+
+        if (distance > 0) {
+            const daysElem = document.getElementById('days');
+            const hoursElem = document.getElementById('hours');
+            const minutesElem = document.getElementById('minutes');
+            const secondsElem = document.getElementById('seconds');
+
+            if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // ==========================================
+    // 3. SCHEDULE TABS SWITCHER
+    // ==========================================
+    function showSchedule(dayId) {
+        document.querySelectorAll('.schedule-content').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.schedule-tab').forEach(btn => {
+            btn.classList.remove('text-gold-600', 'border-gold-500');
+            btn.classList.add('text-navy-900/60', 'border-transparent');
+        });
+        const targetContent = document.getElementById(dayId);
+        const targetBtn = document.getElementById('btn-' + dayId);
+        if (targetContent) targetContent.classList.remove('hidden');
+        if (targetBtn) {
+            targetBtn.classList.add('text-gold-600', 'border-gold-500');
+            targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
+        }
+    }
+
+    // ==========================================
+    // 4. SUPABASE INITIALIZATION & SUBMISSIONS
+    // ==========================================
+    const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';       
+    const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; 
+    let supabase = null;
+
+    if (window.supabase) {
+        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+
+    // Delegate Registration Global Handler
+    async function handleDelegateSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('reg-btn');
+        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
+
+        const payload = {
+            full_name: document.getElementById('reg-name')?.value,
+            email: document.getElementById('reg-email')?.value,
+            phone: document.getElementById('reg-phone')?.value,
+            institution: document.getElementById('reg-institution')?.value,
+            registration_type: document.getElementById('reg-type')?.value || 'Delegate'
+        };
+
+        if (supabase) {
+            const { error } = await supabase.from('delegate_registrations').insert([payload]);
+            if (error) {
+                alert('Database Error: ' + error.message);
+            } else {
+                alert('Registration pass request submitted successfully!');
+                closeModal('register-modal');
+                document.getElementById('delegate-form')?.reset();
+            }
+        } else {
+            alert('Supabase client not initialized.');
+        }
+
+        if (btn) { btn.disabled = false; btn.innerText = 'Submit Registration'; }
+    }
+
+    // Abstract Submission Global Handler
+    async function handleAbstractSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('abs-btn');
+        if (btn) { btn.disabled = true; btn.innerText = 'Submitting...'; }
+
+        const payload = {
+            author_name: document.getElementById('abs-author')?.value,
+            email: document.getElementById('abs-email')?.value,
+            institution: document.getElementById('abs-institution')?.value,
+            paper_title: document.getElementById('abs-title')?.value,
+            sub_theme: document.getElementById('abs-theme')?.value,
+            abstract_text: document.getElementById('abs-text')?.value
+        };
+
+        if (supabase) {
+            const { error } = await supabase.from('abstract_submissions').insert([payload]);
+            if (error) {
+                alert('Database Error: ' + error.message);
+            } else {
+                alert('Paper abstract submitted successfully!');
+                closeModal('abstract-modal');
+                document.getElementById('abstract-form')?.reset();
+            }
+        } else {
+            alert('Supabase client not initialized.');
+        }
+
+        if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
+    }
+</script>
 </body>
 </html>
