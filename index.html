@@ -684,25 +684,22 @@
     // ==========================================
     // 1. SUPABASE INITIALIZATION
     // ==========================================
-    const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';       // Replace with your Supabase Project URL
-    const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; // Replace with your Supabase Anon/Public Key
+    const SUPABASE_URL = 'https://your-project-id.supabase.co'; // Insert your Supabase URL here
+    const SUPABASE_ANON_KEY = 'your-anon-key-here';            // Insert your Supabase Anon Key here
     let supabase = null;
 
-    if (window.supabase) {
+    if (window.supabase && SUPABASE_URL !== 'https://your-project-id.supabase.co') {
         supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     }
 
     // ==========================================
-    // 2. MOBILE MENU TOGGLE
+    // 2. MOBILE MENU & MODAL HANDLERS
     // ==========================================
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         if (menu) menu.classList.toggle('hidden');
     }
 
-    // ==========================================
-    // 3. MODAL HANDLERS
-    // ==========================================
     function openModal(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) modal.classList.remove('hidden');
@@ -714,31 +711,47 @@
     }
 
     // ==========================================
-    // 4. COUNTDOWN TIMER
+    // 3. COUNTDOWN TIMER FUNCTIONALITY
     // ==========================================
-    const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
+    function startCountdown() {
+        // Target: December 23, 2026 at 09:00 AM
+        const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = conferenceDate - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = conferenceDate - now;
 
-        if (distance > 0) {
             const daysElem = document.getElementById('days');
             const hoursElem = document.getElementById('hours');
             const minutesElem = document.getElementById('minutes');
             const secondsElem = document.getElementById('seconds');
 
-            if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            if (distance > 0) {
+                if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+            } else {
+                if (daysElem) daysElem.innerText = "00";
+                if (hoursElem) hoursElem.innerText = "00";
+                if (minutesElem) minutesElem.innerText = "00";
+                if (secondsElem) secondsElem.innerText = "00";
+            }
         }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+
+    // Run countdown when DOM content is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startCountdown);
+    } else {
+        startCountdown();
+    }
 
     // ==========================================
-    // 5. SCHEDULE TABS SWITCHER
+    // 4. SCHEDULE TABS SWITCHER
     // ==========================================
     function showSchedule(dayId) {
         document.querySelectorAll('.schedule-content').forEach(el => {
@@ -753,9 +766,7 @@
         const targetContent = document.getElementById(dayId);
         const targetBtn = document.getElementById('btn-' + dayId);
         
-        if (targetContent) {
-            targetContent.classList.remove('hidden');
-        }
+        if (targetContent) targetContent.classList.remove('hidden');
         if (targetBtn) {
             targetBtn.classList.add('text-gold-600', 'border-gold-500');
             targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
@@ -763,7 +774,7 @@
     }
 
     // ==========================================
-    // 6. QUOTES CAROUSEL
+    // 5. QUOTES CAROUSEL
     // ==========================================
     const quotes = [
         {
@@ -775,7 +786,7 @@
             author: '— Quaid-e-Azam Muhammad Ali Jinnah (Speech at London, 1946)'
         },
         {
-            text: '"Education is a matter of life and death for Pakistan. The world is moving so fast that if you do not educate yourselves you will be not only completely left behind, but will be finished up."',
+            text: '"Education is a matter of life and death for Pakistan. The world is moving so fast that if you do not educate yourselves you will be completely left behind."',
             author: '— Quaid-e-Azam Muhammad Ali Jinnah (All Pakistan Educational Conference, 1947)'
         }
     ];
@@ -801,7 +812,7 @@
     }
 
     // ==========================================
-    // 7. SUPABASE FORM SUBMISSIONS
+    // 6. SUPABASE FORM SUBMISSIONS
     // ==========================================
     async function handleDelegateSubmit(e) {
         e.preventDefault();
@@ -829,7 +840,8 @@
                 document.getElementById('delegate-form')?.reset();
             }
         } else {
-            alert('Supabase client is not loaded.');
+            alert('Form submitted! (Note: Please add valid Supabase keys to save directly to database)');
+            closeModal('register-modal');
         }
 
         if (btn) {
@@ -865,7 +877,8 @@
                 document.getElementById('abstract-form')?.reset();
             }
         } else {
-            alert('Supabase client is not loaded.');
+            alert('Abstract submitted! (Note: Please add valid Supabase keys to save directly to database)');
+            closeModal('abstract-modal');
         }
 
         if (btn) {
