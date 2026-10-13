@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAU International Conference - 150th Birth Anniversary of Quaid-e-Azam</title>
     
-    <!-- Supabase JS Library -->
+    <!-- Supabase JS Library CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -32,7 +33,7 @@
                             200: '#f7eebe',
                             300: '#f1e295',
                             400: '#e5cc64',
-                            500: '#d4af37', // Regal Warm Gold
+                            500: '#d4af37',
                             600: '#aa8823',
                             700: '#7d6115',
                         },
@@ -68,9 +69,6 @@
                 radial-gradient(circle at 80% 80%, rgba(0, 77, 49, 0.4) 0%, transparent 50%),
                 linear-gradient(to bottom, rgba(1, 42, 28, 0.8), rgba(1, 42, 28, 0.98));
         }
-        .gold-aura {
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
-        }
         .gold-aura-lg {
             box-shadow: 0 0 50px rgba(212, 175, 55, 0.45);
         }
@@ -78,14 +76,6 @@
             background: rgba(1, 42, 28, 0.75);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        .glass-card-light {
-            background: rgba(253, 251, 247, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        .gold-foil-border {
-            border-image: linear-gradient(135deg, #d4af37, #f7eebe, #aa8823) 1;
         }
         .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
@@ -108,7 +98,7 @@
 </head>
 <body class="bg-ivory-50 text-navy-900 font-sans antialiased custom-scrollbar">
 
-    <!-- Announcement Bar -->
+    <!-- Top Announcement Bar -->
     <div class="bg-emerald-950 text-gold-300 border-b border-gold-500/30 text-xs sm:text-sm py-2 px-4 relative z-50">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
@@ -123,7 +113,7 @@
             <div class="flex items-center gap-4">
                 <a href="#call-for-papers" class="hover:text-gold-100 transition-colors">Call for Papers</a>
                 <span class="text-emerald-800">|</span>
-                <a href="#register" class="hover:text-gold-100 transition-colors font-semibold text-gold-400">Delegate Portal</a>
+                <button type="button" onclick="openModal('register-modal')" class="hover:text-gold-100 transition-colors font-semibold text-gold-400">Delegate Portal</button>
                 <span class="bg-emerald-900/90 border border-gold-500/40 text-gold-300 px-3 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
                     150th Sesquicentennial Jubilee
@@ -132,28 +122,27 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Bar -->
     <nav class="sticky top-0 z-40 bg-emerald-950/95 backdrop-blur-lg border-b border-gold-500/30 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center gap-3 group focus:outline-none py-1">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gold-400 bg-white flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform overflow-hidden flex-shrink-0">
-                    <img src="qau logo.jpg" alt="QAU Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/004225?text=QAU';">
+                        <img src="qau logo.jpg" alt="QAU Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/004225?text=QAU';">
                     </div>
                     <div class="flex flex-col justify-center">
-                    <span class="font-serif font-bold text-base sm:text-lg text-white block tracking-wide leading-tight group-hover:text-gold-400 transition-colors">QAU ISLAMABAD</span>
-                    <span class="text-[10px] sm:text-xs text-gold-400 font-semibold tracking-wider uppercase block leading-tight group-hover:text-white transition-colors">Jinnah 150 Secretariat</span>
+                        <span class="font-serif font-bold text-base sm:text-lg text-white block tracking-wide leading-tight group-hover:text-gold-400 transition-colors">QAU ISLAMABAD</span>
+                        <span class="text-[10px] sm:text-xs text-gold-400 font-semibold tracking-wider uppercase block leading-tight group-hover:text-white transition-colors">Jinnah 150 Secretariat</span>
                     </div>
                 </a>
 
                 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
                     <a href="#about" class="text-ivory-100 hover:text-gold-400 transition-colors">About</a>
                     <a href="#schedule" class="text-ivory-100 hover:text-gold-400 transition-colors">Schedule & Speakers</a>
-                    <a href="#speeches" class="text-ivory-100 hover:text-gold-400 transition-colors">Speeches & Letters</a>
                     <a href="#call-for-papers" class="text-ivory-100 hover:text-gold-400 transition-colors">Call for Papers</a>
                     <a href="#archive" class="text-ivory-100 hover:text-gold-400 transition-colors">Archives</a>
                     <a href="#partners" class="text-ivory-100 hover:text-gold-400 transition-colors">Partners</a>
-                    <a href="#register" class="bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-emerald-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-gold-500/20 transition-all transform hover:-translate-y-0.5">Register Pass</a>
+                    <button type="button" onclick="openModal('register-modal')" class="bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-emerald-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-gold-500/20 transition-all transform hover:-translate-y-0.5">Register Pass</button>
                 </div>
 
                 <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" class="lg:hidden text-ivory-100 hover:text-gold-400 text-2xl focus:outline-none p-2">
@@ -165,11 +154,10 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-emerald-950 border-b border-gold-500/30 px-6 pt-3 pb-6 space-y-3">
             <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">About Conference</a>
             <a href="#schedule" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Schedule & Keynote Speakers</a>
-            <a href="#speeches" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Speeches & Letters</a>
             <a href="#call-for-papers" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Call for Papers</a>
             <a href="#archive" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Photo Archives</a>
             <a href="#partners" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Partners & Sponsors</a>
-            <a href="#register" onclick="toggleMobileMenu()" class="block w-full text-center bg-gold-500 text-emerald-950 font-extrabold py-3 rounded-xl mt-2">Register Now</a>
+            <button type="button" onclick="toggleMobileMenu(); openModal('register-modal')" class="block w-full text-center bg-gold-500 text-emerald-950 font-extrabold py-3 rounded-xl mt-2">Register Now</button>
         </div>
     </nav>
 
@@ -220,9 +208,9 @@
                     </p>
 
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="#register" class="bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-emerald-950 font-extrabold px-8 py-4 rounded-xl text-sm sm:text-base shadow-xl hover:shadow-gold-500/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2.5">
+                        <button type="button" onclick="openModal('register-modal')" class="bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-emerald-950 font-extrabold px-8 py-4 rounded-xl text-sm sm:text-base shadow-xl hover:shadow-gold-500/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2.5">
                             <i class="fa-solid fa-ticket"></i> Get Delegate Pass
-                        </a>
+                        </button>
                         <button type="button" onclick="openModal('abstract-modal')" class="bg-emerald-900/80 hover:bg-emerald-900 text-ivory-100 border border-gold-500/60 font-semibold px-8 py-4 rounded-xl text-sm sm:text-base backdrop-blur-md shadow-lg transition-all flex items-center gap-2.5">
                             <i class="fa-solid fa-file-arrow-up text-gold-400"></i> Submit Abstract
                         </button>
@@ -283,7 +271,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About & Call for Papers Section -->
     <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -355,7 +343,7 @@
         </div>
     </section>
 
-    <!-- Schedule & Speakers Section -->
+    <!-- Schedule & Keynote Speakers Section -->
     <section id="schedule" class="py-20 bg-ivory-100 border-t border-b border-gold-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -431,8 +419,12 @@
                 <button type="button" id="btn-day2" onclick="showSchedule('day2')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap">
                     DAY 2: DEC 24, 2026 (Academic Sessions)
                 </button>
+                <button type="button" id="btn-day3" onclick="showSchedule('day3')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap">
+                    DAY 3: DEC 25, 2026 (Valedictory)
+                </button>
             </div>
 
+            <!-- Schedule Day 1 -->
             <div id="day1" class="schedule-content space-y-4">
                 <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm">
                     <span class="text-gold-600 font-bold text-sm block mb-1">09:00 AM – 10:30 AM</span>
@@ -446,32 +438,226 @@
                 </div>
             </div>
 
+            <!-- Schedule Day 2 -->
             <div id="day2" class="schedule-content space-y-4 hidden">
                 <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm">
                     <span class="text-gold-600 font-bold text-sm block mb-1">09:30 AM – 12:30 PM</span>
                     <h4 class="font-serif font-bold text-emerald-950 text-lg">Parallel Academic Research Sessions</h4>
                     <p class="text-navy-900/70 text-sm mt-1">Scholars and researchers present peer-reviewed papers across 4 designated conference halls covering foreign policy, minority rights, and education.</p>
                 </div>
+                <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm">
+                    <span class="text-gold-600 font-bold text-sm block mb-1">02:00 PM – 05:00 PM</span>
+                    <h4 class="font-serif font-bold text-emerald-950 text-lg">Panel Discussion: Economic Self-Reliance in the 21st Century</h4>
+                    <p class="text-navy-900/70 text-sm mt-1">Economists and policy experts discuss Jinnah's fiscal policies and state bank addresses applied to modern economic challenges.</p>
+                </div>
+            </div>
+
+            <!-- Schedule Day 3 -->
+            <div id="day3" class="schedule-content space-y-4 hidden">
+                <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm">
+                    <span class="text-gold-600 font-bold text-sm block mb-1">10:00 AM – 01:00 PM</span>
+                    <h4 class="font-serif font-bold text-emerald-950 text-lg">Valedictory Session & Sesquicentennial Resolutions</h4>
+                    <p class="text-navy-900/70 text-sm mt-1">Presentation of conference proceedings, distribution of certificates, and closing remarks by guest dignitaries.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript Block -->
+    <!-- Photo Archives Section -->
+    <section id="archive" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gold-600 font-serif font-bold text-xs tracking-widest uppercase">Historical Heritage</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-2">Archival Photo Gallery</h2>
+            <p class="text-navy-900/70 text-xs sm:text-sm mt-3">Rare historical moments and photographs from Quaid-e-Azam's life and the founding history of Pakistan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl border border-gold-500/30 overflow-hidden shadow-md group hover:border-gold-500 transition-all">
+                <div class="relative h-64 overflow-hidden bg-emerald-950">
+                    <img src="quaid 1.jpg" alt="Quaid-e-Azam Historic Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/003a25/ffffff?text=Archival+Photo+1'">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-serif font-bold text-emerald-950 text-lg">Historical Address</h3>
+                    <p class="text-navy-900/70 text-xs mt-1">Rare photograph capturing Quaid-e-Azam addressing the Constituent Assembly in 1947.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gold-500/30 overflow-hidden shadow-md group hover:border-gold-500 transition-all">
+                <div class="relative h-64 overflow-hidden bg-emerald-950">
+                    <img src="quaid 2.jpg" alt="Quaid-e-Azam with Cabinet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/003a25/ffffff?text=Archival+Photo+2'">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-serif font-bold text-emerald-950 text-lg">Founding Leadership</h3>
+                    <p class="text-navy-900/70 text-xs mt-1">Historic meeting with key statesmen during the constitutional framing period.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gold-500/30 overflow-hidden shadow-md group hover:border-gold-500 transition-all">
+                <div class="relative h-64 overflow-hidden bg-emerald-950">
+                    <img src="quaid 3.jpg" alt="Quaid-e-Azam University Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/003a25/ffffff?text=Archival+Photo+3'">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-serif font-bold text-emerald-950 text-lg">QAU Heritage</h3>
+                    <p class="text-navy-900/70 text-xs mt-1">Quaid-i-Azam University's campus evolution as Pakistan's top research institution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Sponsors Section -->
+    <section id="partners" class="py-20 bg-emerald-950 text-ivory-50 border-t border-gold-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-serif font-bold text-xs tracking-widest uppercase">Collaborators & Supporters</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-300 mt-2">Partner Organizations</h2>
+                <p class="text-ivory-200 text-xs sm:text-sm mt-3">Organized under the patronage of premier national academic, historical, and research institutions.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+                <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 transition-all">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center text-gold-400 text-2xl font-bold">QAU</div>
+                    <h4 class="font-serif text-gold-300 font-bold text-sm">Quaid-i-Azam University</h4>
+                    <p class="text-ivory-200 text-[10px] mt-1">Host & Lead Secretariat</p>
+                </div>
+
+                <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 transition-all">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center text-gold-400 text-2xl font-bold">HEC</div>
+                    <h4 class="font-serif text-gold-300 font-bold text-sm">Higher Education Commission</h4>
+                    <p class="text-ivory-200 text-[10px] mt-1">Academic Patron</p>
+                </div>
+
+                <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 transition-all">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center text-gold-400 text-2xl font-bold">NIHCR</div>
+                    <h4 class="font-serif text-gold-300 font-bold text-sm">Historical & Cultural Research</h4>
+                    <p class="text-ivory-200 text-[10px] mt-1">Research Partner</p>
+                </div>
+
+                <div class="bg-emerald-900/60 p-6 rounded-2xl border border-gold-500/30 text-center hover:border-gold-400 transition-all">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center text-gold-400 text-2xl font-bold">FJWU</div>
+                    <h4 class="font-serif text-gold-300 font-bold text-sm">Fatima Jinnah Women Univ.</h4>
+                    <p class="text-ivory-200 text-[10px] mt-1">Collaborating University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal 1: Delegate Registration Form -->
+    <div id="register-modal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-ivory-50 shadow-2xl relative">
+            <button type="button" onclick="closeModal('register-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-gold-400 mb-2">Register Delegate Pass</h3>
+            <p class="text-xs text-ivory-200 mb-6">Request your official conference delegate pass to attend session presentations.</p>
+            
+            <form id="delegate-form" onsubmit="handleDelegateSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Full Name *</label>
+                    <input type="text" id="reg-name" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
+                    <input type="email" id="reg-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Phone / WhatsApp</label>
+                        <input type="text" id="reg-phone" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Pass Type</label>
+                        <select id="reg-type" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                            <option value="delegate">Delegate</option>
+                            <option value="student">Student</option>
+                            <option value="speaker">Presenter</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Institution / Organization</label>
+                    <input type="text" id="reg-institution" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <button type="submit" id="reg-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg mt-2">
+                    Submit Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Abstract Submission Form -->
+    <div id="abstract-modal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-xl w-full text-ivory-50 shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button type="button" onclick="closeModal('abstract-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-gold-400 mb-2">Submit Paper Abstract</h3>
+            <p class="text-xs text-ivory-200 mb-6">Submit your academic paper summary for peer review by the QAU Conference Committee.</p>
+            
+            <form id="abstract-form" onsubmit="handleAbstractSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Author Name *</label>
+                        <input type="text" id="abs-author" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1">Email *</label>
+                        <input type="email" id="abs-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Institution</label>
+                    <input type="text" id="abs-institution" class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Paper Title *</label>
+                    <input type="text" id="abs-title" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Conference Sub-Theme *</label>
+                    <select id="abs-theme" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                        <option value="Constitutionalism">Constitutionalism & Rule of Law</option>
+                        <option value="Foreign Policy">Foreign Policy & Regional Peace</option>
+                        <option value="Education">Education & Youth Empowerment</option>
+                        <option value="Minority Rights">Minority Rights & Inclusion</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1">Abstract Summary (Max 300 words) *</label>
+                    <textarea id="abs-text" rows="4" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+                <button type="submit" id="abs-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg mt-2">
+                    Submit Abstract
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-ivory-200 py-10 border-t border-gold-500/30 text-xs">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gold-400 font-serif font-bold text-sm mb-2">Quaid-i-Azam University, Islamabad</p>
+            <p>© 2026 International Conference Secretariat. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Complete JavaScript Logic -->
     <script>
-        // Supabase Credentials
+        // 1. SUPABASE CLIENT INITIALIZATION
         const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
         const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        let supabase = null;
 
-        // Initialize Supabase Client
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        if (window.supabase) {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        }
 
-        // Mobile Menu Toggle
+        // 2. MOBILE MENU TOGGLE
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
         }
 
-        // Modal Handlers
+        // 3. MODAL DISPLAY HANDLERS
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) modal.classList.remove('hidden');
@@ -482,7 +668,7 @@
             if (modal) modal.classList.add('hidden');
         }
 
-        // Countdown Timer
+        // 4. COUNTDOWN TIMER FUNCTIONALITY
         const conferenceDate = new Date('December 23, 2026 09:00:00').getTime();
 
         function updateCountdown() {
@@ -495,16 +681,16 @@
                 const minutesElem = document.getElementById('minutes');
                 const secondsElem = document.getElementById('seconds');
 
-                if (daysElem) daysElem.innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-                if (hoursElem) hoursElem.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                if (minutesElem) minutesElem.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                if (secondsElem) secondsElem.innerText = Math.floor((distance % (1000 * 60)) / 1000);
+                if (daysElem) daysElem.innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                if (hoursElem) hoursElem.innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                if (minutesElem) minutesElem.innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                if (secondsElem) secondsElem.innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
             }
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Schedule Tabs Switcher
+        // 5. SCHEDULE SWITCHER TABS
         function showSchedule(dayId) {
             document.querySelectorAll('.schedule-content').forEach(el => el.classList.add('hidden'));
             
@@ -521,6 +707,104 @@
                 targetBtn.classList.add('text-gold-600', 'border-gold-500');
                 targetBtn.classList.remove('text-navy-900/60', 'border-transparent');
             }
+        }
+
+        // 6. QUOTES CAROUSEL
+        const quotes = [
+            {
+                text: '"Unity, Faith, and Discipline are our cardinal principles. With selfless devotion to duty, there is nothing worthwhile that you cannot achieve."',
+                author: '— Quaid-e-Azam Muhammad Ali Jinnah (Address to Officers, 1948)'
+            },
+            {
+                text: '"Democracy is in the blood of the Muslims, who look upon complete equality of mankind, and believe in fraternity, equality, and liberty."',
+                author: '— Quaid-e-Azam Muhammad Ali Jinnah (Speech at London, 1946)'
+            },
+            {
+                text: '"Education is a matter of life and death for Pakistan. The world is moving so fast that if you do not educate yourselves you will be not only completely left behind, but will be finished up."',
+                author: '— Quaid-e-Azam Muhammad Ali Jinnah (All Pakistan Educational Conference, 1947)'
+            }
+        ];
+        let currentQuoteIndex = 0;
+
+        function updateQuote() {
+            const textElem = document.getElementById('quote-text');
+            const authorElem = document.getElementById('quote-author');
+            if (textElem && authorElem) {
+                textElem.innerText = quotes[currentQuoteIndex].text;
+                authorElem.innerText = quotes[currentQuoteIndex].author;
+            }
+        }
+
+        function nextQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            updateQuote();
+        }
+
+        function prevQuote() {
+            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+            updateQuote();
+        }
+
+        // 7. SUPABASE FORM SUBMISSIONS
+        async function handleDelegateSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('reg-btn');
+            btn.disabled = true;
+            btn.innerText = 'Submitting...';
+
+            const payload = {
+                full_name: document.getElementById('reg-name').value,
+                email: document.getElementById('reg-email').value,
+                phone: document.getElementById('reg-phone').value,
+                registration_type: document.getElementById('reg-type').value,
+                institution: document.getElementById('reg-institution').value
+            };
+
+            if (supabase) {
+                const { error } = await supabase.from('delegate_registrations').insert([payload]);
+                if (error) {
+                    alert('Error submitting registration: ' + error.message);
+                } else {
+                    alert('Registration pass request submitted successfully!');
+                    closeModal('register-modal');
+                    document.getElementById('delegate-form').reset();
+                }
+            } else {
+                alert('Supabase client is not loaded.');
+            }
+            btn.disabled = false;
+            btn.innerText = 'Submit Registration';
+        }
+
+        async function handleAbstractSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('abs-btn');
+            btn.disabled = true;
+            btn.innerText = 'Submitting...';
+
+            const payload = {
+                author_name: document.getElementById('abs-author').value,
+                email: document.getElementById('abs-email').value,
+                institution: document.getElementById('abs-institution').value,
+                paper_title: document.getElementById('abs-title').value,
+                sub_theme: document.getElementById('abs-theme').value,
+                abstract_text: document.getElementById('abs-text').value
+            };
+
+            if (supabase) {
+                const { error } = await supabase.from('abstract_submissions').insert([payload]);
+                if (error) {
+                    alert('Error submitting abstract: ' + error.message);
+                } else {
+                    alert('Paper abstract submitted successfully!');
+                    closeModal('abstract-modal');
+                    document.getElementById('abstract-form').reset();
+                }
+            } else {
+                alert('Supabase client is not loaded.');
+            }
+            btn.disabled = false;
+            btn.innerText = 'Submit Abstract';
         }
     </script>
 </body>
