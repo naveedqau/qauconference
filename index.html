@@ -89,116 +89,91 @@
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
-        /* Outer Section Wrapper */
-.countdown-banner-section {
-  width: 100%;
-  background-color: #0b192c; /* Deep Navy base */
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Banner Container with Geometric Ivory/Navy Pattern Effect */
-.countdown-banner-container {
-  width: 100%;
-  max-width: 1300px;
-  background-color: #f9f8f6; /* Ivory academic background */
-  background-image: 
-    radial-gradient(#d4af37 0.75px, transparent 0.75px), 
-    radial-gradient(#d4af37 0.75px, #f9f8f6 0.75px);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px; /* Subtle academic geometric dot/star texture */
-  border: 3px solid #1a304a;
-  border-radius: 12px;
-  padding: 25px 15px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-/* Main Floating Countdown Card */
-.countdown-card {
-  background-color: #12232e; /* Rich dark slate green/navy */
-  border: 2px solid #d4af37; /* Elegant gold border */
-  border-radius: 14px;
-  padding: 20px 35px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  max-width: 750px;
-  width: 100%;
-}
-
-/* Header Text */
-.countdown-header {
-  color: #f3e5ab; /* Soft gold text */
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-/* Countdown Boxes Layout */
-.countdown-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-/* Individual Time Box */
-.time-box {
-  background-color: #0b192c;
-  border: 1.5px solid #d4af37;
-  border-radius: 10px;
-  padding: 12px 18px;
-  min-width: 90px;
-  text-align: center;
-}
-
-/* Numbers (Targeted by your JavaScript IDs) */
-.time-box span {
-  display: block;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  font-family: serif; /* Classic academic numeral look */
-}
-
-/* Seconds highlight styling option */
-#secs {
-  color: #f3e5ab; /* Distinct gold color for seconds */
-}
-
-/* Labels (DAYS, HOURS, etc.) */
-.time-box label {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: #d4af37;
-  letter-spacing: 1px;
-  margin-top: 4px;
-}
-
-/* Responsive adjustments for mobile screens */
-@media (max-width: 768px) {
-  .countdown-boxes {
-    gap: 8px;
-  }
-  .time-box {
-    padding: 8px 10px;
-    min-width: 65px;
-  }
-  .time-box span {
-    font-size: 1.5rem;
-  }
-  .countdown-card {
-    padding: 15px 10px;
-  }
-}
-    </style>
+        .countdown-banner-section {
+          width: 100%;
+          background-color: #0b192c;
+          padding: 30px 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .countdown-banner-container {
+          width: 100%;
+          max-width: 1300px;
+          background-color: #f9f8f6;
+          background-image: 
+            radial-gradient(#d4af37 0.75px, transparent 0.75px), 
+            radial-gradient(#d4af37 0.75px, #f9f8f6 0.75px);
+          background-size: 30px 30px;
+          background-position: 0 0, 15px 15px;
+          border: 3px solid #1a304a;
+          border-radius: 12px;
+          padding: 25px 15px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .countdown-card {
+          background-color: #12232e;
+          border: 2px solid #d4af37;
+          border-radius: 14px;
+          padding: 20px 35px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+          text-align: center;
+          max-width: 750px;
+          width: 100%;
+          margin: 0 auto;
+        }
+        
+        .countdown-header {
+          color: #f3e5ab;
+          font-size: 0.95rem;
+          font-weight: 600;
+          letter-spacing: 2px;
+          margin-bottom: 15px;
+          text-transform: uppercase;
+        }
+        
+        .countdown-boxes {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+        }
+        
+        .time-box {
+          background-color: #0b192c;
+          border: 1.5px solid #d4af37;
+          border-radius: 10px;
+          padding: 12px 18px;
+          min-width: 90px;
+          text-align: center;
+        }
+        
+        .time-box span {
+          display: block;
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: #ffffff;
+          font-family: serif;
+        }
+        
+        #seconds {
+          color: #f3e5ab;
+        }
+        
+        .time-box label {
+          display: block;
+          font-size: 0.7rem;
+          font-weight: 600;
+          color: #d4af37;
+          letter-spacing: 1px;
+          margin-top: 4px;
+        }
+                           
+  </style>
 </head>
 <body class="bg-ivory-50 text-navy-900 font-sans antialiased custom-scrollbar">
 
@@ -348,24 +323,31 @@
         </section>
 
             <!-- Countdown Timer Panel -->
-            <div class="countdown-boxes">
-              <div class="time-box">
-             <span id="days">70</span>
-            <label>DAYS</label>
-             </div>
-          <div class="time-box">
-            <span id="hours">00</span>
-            <label>HOURS</label>
-          </div>
-          <div class="time-box">
-            <span id="minutes">29</span> <!-- Changed from 'mins' to 'minutes' -->
-            <label>MINS</label>
-          </div>
-          <div class="time-box">
-            <span id="seconds">04</span> <!-- Changed from 'secs' to 'seconds' -->
-            <label>SECS</label>
-          </div>
-        </div>
+            <section class="countdown-banner-section">
+              <div class="countdown-banner-container">
+                <div class="countdown-card">
+                  <div class="countdown-header">OPENING CEREMONY COUNTDOWN</div>
+                  <div class="countdown-boxes">
+                    <div class="time-box">
+                      <span id="days">70</span>
+                      <label>DAYS</label>
+                    </div>
+                    <div class="time-box">
+                      <span id="hours">00</span>
+                      <label>HOURS</label>
+                    </div>
+                    <div class="time-box">
+                      <span id="minutes">07</span>
+                      <label>MINS</label>
+                    </div>
+                    <div class="time-box">
+                      <span id="seconds">59</span>
+                      <label>SECS</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
     </section>
 
     <!-- Quotes Carousel Section -->
