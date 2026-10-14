@@ -89,81 +89,121 @@
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
+        /* Outer Section Wrapper */
         .countdown-banner-section {
               width: 100%;
-              padding: 30px 20px;
+              background-color: #0b192c;
+              padding: 40px 20px;
               display: flex;
               justify-content: center;
               align-items: center;
-              background-color: #0b192c;
-         }
+            }
             
-            /* Banner container using the graphic background */
+            /* Outer Banner Wrapper with Islamic/Geometric Ornate Background Pattern */
             .ornate-banner-wrapper {
               width: 100%;
-              max-width: 1200px;
-              height: auto;
-              min-height: 160px;
-              /* Save the ornate banner image to your assets folder and link it here */
-              background: url('assets/ornate-banner-bg.png') center center / cover no-repeat;
-              border-radius: 40px;
+              max-width: 1300px;
+              background-color: #f9f8f6; /* Classic Academic Ivory */
+              /* Simulated geometric academic pattern background using CSS gradients */
+              background-image: 
+                radial-gradient(#d4af37 0.8px, transparent 0.8px), 
+                radial-gradient(#d4af37 0.8px, #f9f8f6 0.8px);
+              background-size: 36px 36px;
+              background-position: 0 0, 18px 18px;
+              border: 4px solid #1a304a; /* Deep navy/bronze outer frame border */
+              border-radius: 16px;
+              padding: 35px 20px;
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(212, 175, 55, 0.15);
               display: flex;
               justify-content: center;
               align-items: center;
-              padding: 20px;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-             }
+              position: relative;
+            }
             
-            /* Overlay box matching the center panel */
+            /* Center Floating Countdown Card */
             .ornate-countdown-card {
-              background: rgba(18, 35, 30, 0.95); /* Deep emerald/navy tone */
-              border: 2px solid #d4af37;
-              border-radius: 20px;
-              padding: 15px 30px;
+              background-color: #12232e; /* Rich deep emerald-navy tone */
+              border: 2px solid #d4af37; /* Elegant metallic gold border */
+              border-radius: 16px;
+              padding: 25px 40px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.2);
               text-align: center;
-              box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.3), 0 8px 20px rgba(0, 0, 0, 0.5);
+              max-width: 800px;
+              width: 100%;
             }
             
+            /* Header Text */
             .countdown-header {
-              color: #d4af37;
-              font-size: 0.85rem;
+              color: #f3e5ab; /* Soft gold text */
+              font-size: 0.95rem;
               font-weight: 700;
-              letter-spacing: 2px;
-              margin-bottom: 12px;
+              letter-spacing: 2.5px;
+              margin-bottom: 18px;
+              text-transform: uppercase;
+              font-family: serif;
             }
             
+            /* Countdown Boxes Layout */
             .countdown-boxes {
               display: flex;
-              gap: 12px;
               justify-content: center;
+              gap: 18px;
             }
             
+            /* Individual Time Box */
             .time-box {
-              background: #0d1e18;
+              background-color: #0b192c;
               border: 1.5px solid #d4af37;
               border-radius: 12px;
-              padding: 10px 16px;
-              min-width: 75px;
+              padding: 14px 20px;
+              min-width: 95px;
+              text-align: center;
+              box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
             }
             
+            /* Numbers (Targeted by your JavaScript IDs: days, hours, minutes, seconds) */
             .time-box span {
               display: block;
-              font-size: 1.8rem;
+              font-size: 2.4rem;
               font-weight: 700;
               color: #ffffff;
-              font-family: 'Times New Roman', Georgia, serif;
+              font-family: 'Times New Roman', Georgia, serif; /* Classic academic serif font for numbers */
+              line-height: 1.1;
             }
             
+            /* Distinct polished gold highlight for seconds */
             #seconds {
-              color: #d4af37;
+              color: #fdd835;
             }
             
+            /* Labels (DAYS, HOURS, MINS, SECS) */
             .time-box label {
               display: block;
-              font-size: 0.65rem;
+              font-size: 0.7rem;
               font-weight: 700;
               color: #d4af37;
-              margin-top: 2px;
+              letter-spacing: 1.5px;
+              margin-top: 6px;
+            }
+            
+            /* Responsive adjustments for smaller screens */
+            @media (max-width: 768px) {
+              .ornate-banner-wrapper {
+                padding: 20px 10px;
+              }
+              .ornate-countdown-card {
+                padding: 15px 15px;
+              }
+              .countdown-boxes {
+                gap: 8px;
+              }
+              .time-box {
+                padding: 10px 8px;
+                min-width: 65px;
+              }
+              .time-box span {
+                font-size: 1.6rem;
+              }
             }
                            
   </style>
