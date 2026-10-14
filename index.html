@@ -629,131 +629,131 @@
     </div>
 </section>
             <!-- Schedule Tabs -->
-<div class="flex border-b-2 border-gold-500/30 mb-8 overflow-x-auto pb-1">
-    <button type="button" id="btn-day1" onclick="showSchedule('day1')" class="schedule-tab px-6 py-3.5 text-gold-600 border-b-4 border-gold-500 font-serif font-bold text-sm sm:text-base cursor-pointer transition-all whitespace-nowrap">
-        DAY 1: DEC 23, 2026 (Inauguration)
-    </button>
-    <button type="button" id="btn-day2" onclick="showSchedule('day2')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap">
-        DAY 2: DEC 24, 2026 (Academic Sessions)
-    </button>
-    <button type="button" id="btn-day3" onclick="showSchedule('day3')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap">
-        DAY 3: DEC 25, 2026 (Valedictory)
-    </button>
-</div>
+<section id="schedule" class="w-full bg-[#0b192c] py-16 px-4 sm:px-6 lg:px-8">
+    <!-- Outer Banner Wrapper with Academic Ivory Pattern -->
+    <div class="max-w-7xl mx-auto bg-[#f9f8f6] bg-[radial-gradient(#d4af37_0.75px,transparent_0.75px),radial-gradient(#d4af37_0.75px,#f9f8f6_0.75px)] [background-size:30px_30px] [background-position:0_0,15px_15px] border-[3px] border-[#1a304a] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="text-gold-600 font-serif font-bold tracking-widest text-xs uppercase block mb-2">Program Overview</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#0b192c]">Interactive Conference Schedule</h2>
+            <div class="w-24 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+        </div>
 
-<!-- ================= SCHEDULE DAY 1 ================= -->
-<div id="day1" class="schedule-content space-y-4">
-    <!-- Event 1 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">09:00 AM – 10:30 AM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">1. Grand Inaugural Ceremony & Presidential Address</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Recitation of Holy Quran, National Anthem, and Welcome Address by Vice Chancellor QAU, Prof. Dr. Zafar Nawaz Jaspal.</p>
-    </div>
+        <!-- DAY TABS (Uses your original tab classes so your JS targets them perfectly) -->
+        <div class="flex border-b-2 border-gold-500/30 mb-8 overflow-x-auto pb-1 gap-2">
+            <button type="button" id="btn-day1" onclick="showSchedule('day1')" class="schedule-tab px-6 py-3.5 text-gold-600 border-b-4 border-gold-500 font-serif font-bold text-sm sm:text-base cursor-pointer transition-all whitespace-nowrap bg-[#0b192c] rounded-t-xl">
+                DAY 1: DEC 23, 2026 (Inauguration)
+            </button>
+            <button type="button" id="btn-day2" onclick="showSchedule('day2')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap bg-[#12232e]/10 rounded-t-xl">
+                DAY 2: DEC 24, 2026 (Academic Sessions)
+            </button>
+            <button type="button" id="btn-day3" onclick="showSchedule('day3')" class="schedule-tab px-6 py-3.5 text-navy-900/60 border-b-4 border-transparent font-serif font-bold text-sm sm:text-base hover:text-emerald-950 cursor-pointer transition-all whitespace-nowrap bg-[#12232e]/10 rounded-t-xl">
+                DAY 3: DEC 25, 2026 (Valedictory)
+            </button>
+        </div>
 
-    <!-- Event 2 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">10:45 AM – 12:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">2. Plenary Keynote: Jinnah's Constitutional Journey</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Keynote presentations by Prof. Dr. Farooq Ahmed Dar and Dr. Sajid Mehmood Awan at the Main Auditorium.</p>
-    </div>
+        <!-- ================= SCHEDULE DAY 1 ================= -->
+        <div id="day1" class="schedule-content space-y-4">
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">09:00 AM – 10:30 AM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">1. Grand Inaugural Ceremony & Presidential Address</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Recitation of Holy Quran, National Anthem, and Welcome Address by Vice Chancellor QAU, Prof. Dr. Zafar Nawaz Jaspal.</p>
+            </div>
 
-    <!-- Event 3 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">12:30 PM – 02:00 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">3. Networking Lunch & Exhibition Opening</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Delegate networking session and tour of the Quaid-i-Azam Historical Photo Exhibition at the Central Lawn.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">10:45 AM – 12:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">2. Plenary Keynote: Jinnah's Constitutional Journey</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Keynote presentations by Prof. Dr. Farooq Ahmed Dar and Dr. Sajid Mehmood Awan at the Main Auditorium.</p>
+            </div>
 
-    <!-- Event 4 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">02:00 PM – 03:45 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">4. Panel Discussion: Statehood, Identity, and Governance</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Chaired by Dr. Ilhan Niaz and Prof. Dr. Bushra Mirza exploring democratic foundations.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">12:30 PM – 02:00 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">3. Networking Lunch & Exhibition Opening</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Delegate networking session and tour of the Quaid-i-Azam Historical Photo Exhibition at the Central Lawn.</p>
+            </div>
 
-    <!-- Event 5 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">04:00 PM – 05:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">5. Gender Perspectives & Evening Reception</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Special session hosted by Dr. Ayesha Anees Malik followed by high tea at the Faculty Club.</p>
-    </div>
-</div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">02:00 PM – 03:45 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">4. Panel Discussion: Statehood, Identity, and Governance</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Chaired by Dr. Ilhan Niaz and Prof. Dr. Bushra Mirza exploring democratic foundations.</p>
+            </div>
 
-<!-- ================= SCHEDULE DAY 2 ================= -->
-<div id="day2" class="schedule-content space-y-4 hidden">
-    <!-- Event 1 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">09:00 AM – 10:30 AM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">1. Keynote Address: Diplomacy in the Modern World</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Distinguished lecture by Amb. Maleeha Lodhi on Quaid-i-Azam's foreign policy vision.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">04:00 PM – 05:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">5. Gender Perspectives & Evening Reception</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Special session hosted by Dr. Ayesha Anees Malik followed by high tea at the Faculty Club.</p>
+            </div>
+        </div>
 
-    <!-- Event 2 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">10:45 AM – 01:00 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">2. Parallel Academic Research Sessions</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Scholars and researchers present peer-reviewed papers across 4 designated conference halls.</p>
-    </div>
+        <!-- ================= SCHEDULE DAY 2 ================= -->
+        <div id="day2" class="schedule-content space-y-4 hidden">
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">09:00 AM – 10:30 AM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">1. Keynote Address: Diplomacy in the Modern World</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Distinguished lecture by Amb. Maleeha Lodhi on Quaid-i-Azam's foreign policy vision.</p>
+            </div>
 
-    <!-- Event 3 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">01:00 PM – 02:15 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">3. Executive Lunch & Poster Presentation Evaluation</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Evaluation of student poster entries by the academic committee in the Conference Foyer.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">10:45 AM – 01:00 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">2. Parallel Academic Research Sessions</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Scholars and researchers present peer-reviewed papers across 4 designated conference halls.</p>
+            </div>
 
-    <!-- Event 4 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">02:15 PM – 03:45 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">4. Workshop: Archival Research Methods & History</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Specialized workshop conducted by the National Institute of Historical and Cultural Research (NIHCR).</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">01:00 PM – 02:15 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">3. Executive Lunch & Poster Presentation Evaluation</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Evaluation of student poster entries by the academic committee in the Conference Foyer.</p>
+            </div>
 
-    <!-- Event 5 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">04:00 PM – 05:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">5. Cultural Evening & Delegates Dinner</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Sufi music performance and formal conference dinner hosted at the QAU Lawn.</p>
-    </div>
-</div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">02:15 PM – 03:45 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">4. Workshop: Archival Research Methods & History</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Specialized workshop conducted by the National Institute of Historical and Cultural Research (NIHCR).</p>
+            </div>
 
-<!-- ================= SCHEDULE DAY 3 ================= -->
-<div id="day3" class="schedule-content space-y-4 hidden">
-    <!-- Event 1 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">09:30 AM – 11:00 AM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">1. Round Table: Youth, Education, and Nation Building</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Interactive dialogue between guest scholars and student delegates at the Main Auditorium.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">04:00 PM – 05:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">5. Cultural Evening & Delegates Dinner</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Sufi music performance and formal conference dinner hosted at the QAU Lawn.</p>
+            </div>
+        </div>
 
-    <!-- Event 2 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">11:15 AM – 12:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">2. Presentation of Conference Resolutions</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Summary of research papers and draft of the 150th Sesquicentennial Declaration.</p>
-    </div>
+        <!-- ================= SCHEDULE DAY 3 ================= -->
+        <div id="day3" class="schedule-content space-y-4 hidden">
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">09:30 AM – 11:00 AM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">1. Round Table: Youth, Education, and Nation Building</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Interactive dialogue between guest scholars and student delegates at the Main Auditorium.</p>
+            </div>
 
-    <!-- Event 3 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">12:30 PM – 01:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">3. Valedictory Session & Sesquicentennial Resolutions</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Chief Guest address, official release of conference proceedings, and closing remarks.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">11:15 AM – 12:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">2. Presentation of Conference Resolutions</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Summary of research papers and draft of the 150th Sesquicentennial Declaration.</p>
+            </div>
 
-    <!-- Event 4 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">01:30 PM – 02:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">4. Awarding of Certificates & Shields</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Distribution of participation certificates and commemorative shields to keynote speakers and authors.</p>
-    </div>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">12:30 PM – 01:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">3. Valedictory Session & Sesquicentennial Resolutions</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Chief Guest address, official release of conference proceedings, and closing remarks.</p>
+            </div>
 
-    <!-- Event 5 -->
-    <div class="bg-white p-6 rounded-2xl border border-gold-500/30 shadow-sm transition-all hover:border-gold-500 hover:shadow-md">
-        <span class="text-gold-600 font-bold text-sm block mb-1">02:30 PM – 03:30 PM</span>
-        <h4 class="font-serif font-bold text-emerald-950 text-lg">5. Farewell High Tea & Group Photograph</h4>
-        <p class="text-navy-900/70 text-sm mt-1">Official group photograph of organizers, speakers, and delegates followed by farewell tea.</p>
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">01:30 PM – 02:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">4. Awarding of Certificates & Shields</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Distribution of participation certificates and commemorative shields to keynote speakers and authors.</p>
+            </div>
+
+            <div class="bg-[#12232e] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl text-white transition-all hover:scale-[1.005]">
+                <span class="text-[#fdd835] font-bold text-sm block mb-1">02:30 PM – 03:30 PM</span>
+                <h4 class="font-serif font-bold text-[#f9f8f6] text-lg">5. Farewell High Tea & Group Photograph</h4>
+                <p class="text-[#c5d1d9] text-sm mt-1">Official group photograph of organizers, speakers, and delegates followed by farewell tea.</p>
+            </div>
+        </div>
+
     </div>
-</div>
+</section>
 
     <!-- Speeches & Letters Section -->
     <section id="speeches" class="py-20 bg-emerald-950 text-ivory-50 border-t border-b border-gold-500/30">
