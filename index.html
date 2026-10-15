@@ -1298,8 +1298,8 @@
                                 const fileExt = file.name.split('.').pop();
                                 const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}.${fileExt}`;
                                 
-                                const { data: uploadData, error: uploadError } = await supabaseClient.storage
-                                    .from('abstracts')
+                               const { data: uploadData, error: uploadError } = await supabaseClient.storage
+                                    .from('abstracts') // Change 'abstracts' to your actual bucket name
                                     .upload(fileName, file);
         
                                 if (uploadError) throw new Error('Storage Upload Error: ' + uploadError.message);
