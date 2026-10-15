@@ -1112,59 +1112,67 @@
 
     <!-- Abstract Submission Modal -->
     <div id="abstract-modal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-ivory-50 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button type="button" onclick="closeModal('abstract-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="font-serif text-2xl font-bold text-gold-400 mb-2">Submit Research Abstract</h3>
-            <form id="abstract-form" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Author Name *</label>
-                    <input type="text" id="abs-author" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
-                    <input type="email" id="abs-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Institution *</label>
-                    <input type="text" id="abs-institution" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Paper Title *</label>
-                    <input type="text" id="abs-title" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Sub-Theme *</label>
-                    <select id="abs-theme" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                        <option value="">Select Sub-Theme</option>
-                        <option value="">Select Sub-Theme</option>
-                        <option value="Historiography on Jinnah">Historiography on Jinnah: Interpretations, Research Gaps, and Emerging Perspectives</option>
-                        <option value="Jinnah’s Personal Life">Jinnah’s Personal Life: Experiences, Influences, and Political Evolution</option>
-                        <option value="Jinnah’s Leadership">Jinnah’s Leadership: Chrisma, Strategy, Negotiations, and Electoral Politics</option>
-                        <option value="Jinnah and the All-India Muslim League">Jinnah and the All-India Muslim League: Party Organization, Institutional Development, and Patronage of the Muslim Political Demands</option>
-                        <option value="Jinnah and Pakistan Movement">Jinnah and Pakistan Movement: Constitutional Struggle, Democratic Principles, Political Mobilization, and the Role of Muslim-Majority Provinces</option>
-                        <option value="Jinnah’s and Making of the New State">Jinnah’s and Making of the New State: Partition, Territorial Integration, and Challenges of Independence</option>
-                        <option value="Jinnah’s Vision of Statehood">Jinnah’s Vision of Statehood: State Formation, Institutional Development, and Nation-Building</option>
-                        <option value="Foreign Policy">Jinnah’s Vision of Governance: Constitutionalism, Democratic Values, the Rule of Law, Fundamental Rights, and Representative Institutions</option>
-                        <option value="Jinnah’s Vision of Federalism">Jinnah’s Vision of Federalism: Citizenship, Provincial Autonomy, National Integration, and Centre-Province Relations.</option>
-                        <option value="Jinnah’s Vision of Inclusivity">Jinnah’s Vision of Inclusivity: Religious Freedom, Minority Rights, Gender Equality, and Equal Citizenship.</option>
-                        <option value="Jinnah’s Socio-economic Vision">Jinnah’s Socio-economic Vision: Economic Self-Reliance, Social Justice, Education, Youth, and National Development.</option>
-                        <option value="Jinnah’s Foreign Policy Vision">Jinnah’s Foreign Policy Vision: Sovereignty, Diplomacy, National Security, International Cooperation, and Cordial Relations.</option>
-                        <option value="Jinnah’s Legacy and Contemporary Relevance">Jinnah’s Legacy and Contemporary Relevance: Reinterpreting His Vision, National Challenges, and Pakistan’s Future.</option
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gold-300 mb-1">Abstract Text *</label>
-                    <textarea id="abs-text" rows="4" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400"></textarea>
-                </div>
-                <button type="submit" id="abs-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer">
-                    Submit Abstract
-                </button>
-            </form>
-        </div>
-    </div>
+    <div class="bg-emerald-950 border-2 border-gold-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-ivory-50 shadow-2xl relative max-h-[85vh] overflow-y-auto">
+        
+        <!-- Close Button -->
+        <button type="button" onclick="closeModal('abstract-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
+        <h3 class="font-serif text-2xl font-bold text-gold-400 mb-4">Submit Research Abstract</h3>
+
+        <form id="abstract-form" class="space-y-4">
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Author Name *</label>
+                <input type="text" id="abs-author" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Email Address *</label>
+                <input type="email" id="abs-email" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Institution *</label>
+                <input type="text" id="abs-institution" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Paper Title *</label>
+                <input type="text" id="abs-title" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Sub-Theme *</label>
+                <select id="abs-theme" required class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                    <option value="">Select Sub-Theme</option>
+                    <option value="Historiography on Jinnah">Historiography on Jinnah: Interpretations, Research Gaps, and Emerging Perspectives</option>
+                    <option value="Jinnah’s Personal Life">Jinnah’s Personal Life: Experiences, Influences, and Political Evolution</option>
+                    <option value="Jinnah’s Leadership">Jinnah’s Leadership: Charisma, Strategy, Negotiations, and Electoral Politics</option>
+                    <option value="Jinnah and the All-India Muslim League">Jinnah and the All-India Muslim League: Party Organization, Institutional Development, and Patronage of the Muslim Political Demands</option>
+                    <option value="Jinnah and Pakistan Movement">Jinnah and Pakistan Movement: Constitutional Struggle, Democratic Principles, Political Mobilization, and the Role of Muslim-Majority Provinces</option>
+                    <option value="Jinnah’s and Making of the New State">Jinnah’s and Making of the New State: Partition, Territorial Integration, and Challenges of Independence</option>
+                    <option value="Jinnah’s Vision of Statehood">Jinnah’s Vision of Statehood: State Formation, Institutional Development, and Nation-Building</option>
+                    <option value="Jinnah’s Vision of Governance">Jinnah’s Vision of Governance: Constitutionalism, Democratic Values, the Rule of Law, Fundamental Rights, and Representative Institutions</option>
+                    <option value="Jinnah’s Vision of Federalism">Jinnah’s Vision of Federalism: Citizenship, Provincial Autonomy, National Integration, and Centre-Province Relations</option>
+                    <option value="Jinnah’s Vision of Inclusivity">Jinnah’s Vision of Inclusivity: Religious Freedom, Minority Rights, Gender Equality, and Equal Citizenship</option>
+                    <option value="Jinnah’s Socio-economic Vision">Jinnah’s Socio-economic Vision: Economic Self-Reliance, Social Justice, Education, Youth, and National Development</option>
+                    <option value="Jinnah’s Foreign Policy Vision">Jinnah’s Foreign Policy Vision: Sovereignty, Diplomacy, National Security, International Cooperation, and Cordial Relations</option>
+                    <option value="Jinnah’s Legacy and Contemporary Relevance">Jinnah’s Legacy and Contemporary Relevance: Reinterpreting His Vision, National Challenges, and Pakistan’s Future</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gold-300 mb-1">Abstract Text * (250–300 words)</label>
+                <textarea id="abs-text" rows="4" required placeholder="Type or paste your research abstract here..." class="w-full bg-emerald-900/80 border border-gold-500/30 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400"></textarea>
+            </div>
+
+            <button type="submit" id="abs-btn" class="w-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer hover:brightness-110 uppercase tracking-wider">
+                Submit Abstract
+            </button>
+        </form>
+    </div>
+</div>
     <!-- SCRIPTS SECTION -->
     <script>
         // 1. MOBILE MENU & MODAL HANDLERS
