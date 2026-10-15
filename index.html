@@ -252,7 +252,16 @@
                     <a href="#about" class="text-ivory-100 hover:text-gold-400 transition-colors">About</a>
                     <a href="#schedule" class="text-ivory-100 hover:text-gold-400 transition-colors">Schedule & Speakers</a>
                     <a href="#speeches" class="text-ivory-100 hover:text-gold-400 transition-colors">Speeches & Letters</a>
-                    <a href="#call-for-papers" class="text-ivory-100 hover:text-gold-400 transition-colors">Call for Papers</a>
+                    
+                    <!-- Call for Papers Tab with Blinking Sticker -->
+                    <a href="#call-for-papers" class="relative text-ivory-100 hover:text-gold-400 transition-colors">
+                        Call for Papers
+                        <span class="absolute -top-1 -right-3 flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                        </span>
+                    </a>
+
                     <a href="#archive" class="text-ivory-100 hover:text-gold-400 transition-colors">Archives</a>
                     <a href="#partners" class="text-ivory-100 hover:text-gold-400 transition-colors">Partners</a>
                     <button type="button" onclick="openModal('register-modal')" class="bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 text-emerald-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg transition-all cursor-pointer">Register Pass</button>
@@ -268,7 +277,16 @@
             <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">About Conference</a>
             <a href="#schedule" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Schedule & Keynote Speakers</a>
             <a href="#speeches" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Speeches & Letters</a>
-            <a href="#call-for-papers" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Call for Papers</a>
+            
+            <!-- Mobile Call for Papers with Blinking Sticker -->
+            <a href="#call-for-papers" onclick="toggleMobileMenu()" class="relative inline-block py-2 text-ivory-100 hover:text-gold-400">
+                Call for Papers
+                <span class="absolute top-2 -right-3 flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                </span>
+            </a>
+
             <a href="#archive" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Photo Archives</a>
             <a href="#partners" onclick="toggleMobileMenu()" class="block py-2 text-ivory-100 hover:text-gold-400">Partners & Sponsors</a>
             <button type="button" onclick="toggleMobileMenu(); openModal('register-modal')" class="block w-full text-center bg-gold-500 text-emerald-950 font-extrabold py-3 rounded-xl mt-2 cursor-pointer">Register Now</button>
