@@ -1241,7 +1241,26 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        const formData = new FormData();
+            formData.append('full_name', fullName);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('institution', institution);
+            formData.append('registration_type', regType);
+            
+            const response = await fetch('register.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                // Open printable pass modal
+                openModal('pass-modal');
+            } else {
+                alert('Database Error: ' + result.error);
+            }
+        /* document.addEventListener('DOMContentLoaded', () => {
             const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';        
             const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; 
             const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
@@ -1356,7 +1375,7 @@
                     }
                 });
             }
-        });
+        }); */
     </script>
 
     <script>
