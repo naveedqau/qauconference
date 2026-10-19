@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAU International Conference - 150th Birth Anniversary of Quaid-e-Azam</title>
     
-    <!-- Supabase JS Library CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -277,7 +274,6 @@
                     <i class="fa-solid fa-university text-gold-500 me-2"></i> Quaid-i-Azam University, Islamabad
                 </a>
                 <span class="hidden md:inline text-emerald-800">|</span>
-                <!-- Conference Email Address Added Here -->
                 <a href="mailto:jinnah150conf@qau.edu.pk" class="hover:text-gold-100 transition-colors flex items-center font-medium text-ivory-100">
                     <i class="fa-solid fa-envelope text-gold-500 me-1.5"></i> jinnah150@qau.edu.pk
                 </a>
@@ -1240,142 +1236,104 @@
         }
     </script>
 
+    <!-- FIXED PHP FETCH FORM HANDLERS -->
     <script>
-        const formData = new FormData();
-            formData.append('full_name', fullName);
-            formData.append('email', email);
-            formData.append('phone', phone);
-            formData.append('institution', institution);
-            formData.append('registration_type', regType);
-            
-            const response = await fetch('register.php', {
-                method: 'POST',
-                body: formData
-            });
-            
-            const result = await response.json();
-            if (result.success) {
-                // Open printable pass modal
-                openModal('pass-modal');
-            } else {
-                alert('Database Error: ' + result.error);
-            }
-        /* document.addEventListener('DOMContentLoaded', () => {
-            const SUPABASE_URL = 'https://gbxnepnpkiwbzdkxgslh.supabase.co';        
-            const SUPABASE_ANON_KEY = 'sb_publishable_CgT_zdUuVYQKiAnq7Hvy_A_2wgk60u1'; 
-            const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-    
-            // Delegate form listener with Printable Pass pop-up
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Delegate Registration Form Handler
             const delegateForm = document.getElementById('delegate-form');
             if (delegateForm) {
                 delegateForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     const btn = document.getElementById('reg-btn');
                     if (btn) { btn.disabled = true; btn.innerText = 'Generating Pass...'; }
-    
+
                     const fullName = document.getElementById('reg-name')?.value;
                     const email = document.getElementById('reg-email')?.value;
                     const phone = document.getElementById('reg-phone')?.value;
                     const institution = document.getElementById('reg-institution')?.value || 'Independent Delegate';
                     const regType = document.getElementById('reg-type')?.value || 'Delegate';
 
-                    const payload = {
-                        full_name: fullName,
-                        email: email,
-                        phone: phone,
-                        institution: institution,
-                        registration_type: regType
-                    };
-    
-                    if (supabaseClient) {
-                        const { error } = await supabaseClient.from('delegate_registrations').insert([payload]);
-                        if (error) {
-                            alert('Database Error: ' + error.message);
-                            if (btn) { btn.disabled = false; btn.innerText = 'Submit & Generate Pass'; }
-                            return;
+                    const formData = new FormData();
+                    formData.append('full_name', fullName);
+                    formData.append('email', email);
+                    formData.append('phone', phone);
+                    formData.append('institution', institution);
+                    formData.append('registration_type', regType);
+
+                    try {
+                        const response = await fetch('register.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+                        if (result.success) {
+                            // Populate pass modal details
+                            const randomId = 'QAU-150-' + Math.floor(1000 + Math.random() * 9000);
+                            document.getElementById('pass-name-display').innerText = fullName;
+                            document.getElementById('pass-inst-display').innerText = institution;
+                            document.getElementById('pass-type-display').innerText = regType.toUpperCase() + ' PASS';
+                            document.getElementById('pass-id-display').innerText = randomId;
+
+                            closeModal('register-modal');
+                            openModal('pass-modal');
+                            delegateForm.reset();
+                        } else {
+                            alert('Database Error: ' + (result.error || 'Unknown error'));
                         }
+                    } catch (err) {
+                        console.error('Fetch error:', err);
+                        alert('Could not connect to register.php. Make sure the file exists on your server.');
+                    } finally {
+                        if (btn) { btn.disabled = false; btn.innerText = 'Submit & Generate Pass'; }
                     }
-
-                    // Populate pass modal details
-                    const randomId = 'QAU-150-' + Math.floor(1000 + Math.random() * 9000);
-                    document.getElementById('pass-name-display').innerText = fullName;
-                    document.getElementById('pass-inst-display').innerText = institution;
-                    document.getElementById('pass-type-display').innerText = regType.toUpperCase() + ' PASS';
-                    document.getElementById('pass-id-display').innerText = randomId;
-
-                    // Close registration form & open printable pass modal
-                    closeModal('register-modal');
-                    openModal('pass-modal');
-                    delegateForm.reset();
-
-                    if (btn) { btn.disabled = false; btn.innerText = 'Submit & Generate Pass'; }
                 });
             }
-    
-            // Abstract form listener with PDF Upload support
+
+            // 2. Abstract Submission Form Handler
             const abstractForm = document.getElementById('abstract-form');
             if (abstractForm) {
                 abstractForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     const btn = document.getElementById('abs-btn');
-                    if (btn) { btn.disabled = true; btn.innerText = 'Uploading PDF...'; }
-    
-                    if (!supabaseClient) {
-                        alert('Supabase client not initialized.');
-                        if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
-                        return;
+                    if (btn) { btn.disabled = true; btn.innerText = 'Uploading...'; }
+
+                    const formData = new FormData();
+                    formData.append('author_name', document.getElementById('abs-author')?.value);
+                    formData.append('email', document.getElementById('abs-email')?.value);
+                    formData.append('institution', document.getElementById('abs-institution')?.value);
+                    formData.append('title', document.getElementById('abs-title')?.value);
+                    formData.append('sub_theme', document.getElementById('abs-theme')?.value);
+                    formData.append('abstract_text', document.getElementById('abs-text')?.value);
+                    
+                    const fileInput = document.getElementById('abs-file');
+                    if (fileInput?.files[0]) {
+                        formData.append('pdf_file', fileInput.files[0]);
                     }
-    
+
                     try {
-                        const fileInput = document.getElementById('abs-file');
-                        const file = fileInput?.files[0];
-                        let fileUrl = null;
-    
-                        if (file) {
-                            const fileExt = file.name.split('.').pop();
-                            const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}.${fileExt}`;
-                            
-                            const { data: uploadData, error: uploadError } = await supabaseClient.storage
-                                .from('abstracts')
-                                .upload(fileName, file);
-    
-                            if (uploadError) throw new Error('Storage Upload Error: ' + uploadError.message);
-    
-                            const { data: publicUrlData } = supabaseClient.storage
-                                .from('abstracts')
-                                .getPublicUrl(fileName);
-    
-                            fileUrl = publicUrlData.publicUrl;
+                        const response = await fetch('submit_abstract.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+                        if (result.success) {
+                            alert('Paper abstract and PDF submitted successfully!');
+                            closeModal('abstract-modal');
+                            abstractForm.reset();
+                        } else {
+                            alert('Database Error: ' + (result.error || 'Unknown error'));
                         }
-    
-                        if (btn) { btn.innerText = 'Submitting Details...'; }
-    
-                        const payload = {
-                            author_name: document.getElementById('abs-author')?.value,
-                            email: document.getElementById('abs-email')?.value,
-                            institution: document.getElementById('abs-institution')?.value,
-                            title: document.getElementById('abs-title')?.value,
-                            sub_theme: document.getElementById('abs-theme')?.value,
-                            abstract_text: document.getElementById('abs-text')?.value,
-                            file_url: fileUrl
-                        };
-    
-                        const { error: insertError } = await supabaseClient.from('abstract_submissions').insert([payload]);
-                        if (insertError) throw new Error('Database Error: ' + insertError.message);
-    
-                        alert('Paper abstract and PDF submitted successfully!');
-                        closeModal('abstract-modal');
-                        abstractForm.reset();
-    
-                    } catch (error) {
-                        console.error('Submission error:', error);
-                        alert(error.message);
+                    } catch (err) {
+                        console.error('Fetch error:', err);
+                        alert('Could not connect to submit_abstract.php. Make sure the file exists on your server.');
                     } finally {
                         if (btn) { btn.disabled = false; btn.innerText = 'Submit Abstract'; }
                     }
                 });
             }
-        }); */
+        });
     </script>
 
     <script>
