@@ -205,45 +205,48 @@
 </head>
 <body class="bg-ivory-50 text-navy-900 font-sans antialiased custom-scrollbar">
 
-    <!-- PAGE LOAD POPUP PROMPT: Call for Papers Abstract Submission -->
-    <div id="page-load-prompt-modal" class="fixed inset-0 bg-navy-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-gradient-to-b from-emerald-950 to-emerald-900 border-2 border-gold-500 rounded-3xl p-6 sm:p-10 max-w-xl w-full text-ivory-50 shadow-2xl relative text-center">
-            <button type="button" onclick="closeModal('page-load-prompt-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="w-16 h-16 mx-auto mb-4 bg-gold-500/10 border border-gold-500 rounded-full flex items-center justify-center text-gold-400 text-2xl shadow-inner">
-                <i class="fa-solid fa-bullhorn animate-bounce"></i>
-            </div>
-            <span class="bg-amber-400 text-emerald-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3 shadow-sm">
-                Call for Papers Open
+   <!-- PAGE LOAD POPUP PROMPT: Call for Papers Abstract Submission -->
+<div id="page-load-prompt-modal" class="fixed inset-0 bg-navy-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-gradient-to-b from-emerald-950 to-emerald-900 border-2 border-gold-500 rounded-3xl p-6 sm:p-10 max-w-xl w-full text-ivory-50 shadow-2xl relative text-center">
+        <button type="button" onclick="closeModal('page-load-prompt-modal')" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="w-16 h-16 mx-auto mb-4 bg-gold-500/10 border border-gold-500 rounded-full flex items-center justify-center text-gold-400 text-2xl shadow-inner">
+            <i class="fa-solid fa-bullhorn animate-bounce"></i>
+        </div>
+        <span class="bg-amber-400 text-emerald-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3 shadow-sm">
+            Call for Papers Open
+        </span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-gold-300 mb-3">
+            Submit Your Abstract Today
+        </h2>
+        <p class="text-ivory-200 text-xs sm:text-sm leading-relaxed mb-6">
+            You are invited to contribute research abstracts (250–300 words) for the <strong>150th Birth Anniversary of Quaid-i-Azam International Conference</strong> at Quaid-i-Azam University, Islamabad.
+            <span class="block mt-2 text-gold-300 font-medium">
+                You can submit via the online portal or please send this on email too: 
+                <a href="mailto:abstracts@qau.edu.pk" class="underline hover:text-amber-300 transition-colors font-bold">abstracts@qau.edu.pk</a>
             </span>
-            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-gold-300 mb-3">
-                Submit Your Abstract Today
-            </h2>
-            <p class="text-ivory-200 text-xs sm:text-sm leading-relaxed mb-6">
-                You are invited to contribute research abstracts (250–300 words) for the <strong>150th Birth Anniversary of Quaid-i-Azam International Conference</strong> at Quaid-i-Azam University, Islamabad.
-            </p>
-            <div class="bg-emerald-950/60 p-4 rounded-2xl border border-gold-500/30 mb-6 text-xs text-left">
-                <div class="flex justify-between items-center border-b border-gold-500/20 pb-2 mb-2">
-                    <span class="text-gold-300">Abstract Submission Deadline:</span>
-                    <strong class="text-amber-300">November 2, 2026</strong>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gold-300">Conference Dates:</span>
-                    <strong class="text-amber-300">December 23–25, 2026</strong>
-                </div>
+        </p>
+        <div class="bg-emerald-950/60 p-4 rounded-2xl border border-gold-500/30 mb-6 text-xs text-left">
+            <div class="flex justify-between items-center border-b border-gold-500/20 pb-2 mb-2">
+                <span class="text-gold-300">Abstract Submission Deadline:</span>
+                <strong class="text-amber-300">November 2, 2026</strong>
             </div>
-            <div class="flex flex-col sm:flex-row gap-3">
-                <button type="button" onclick="closeModal('page-load-prompt-modal'); openModal('abstract-modal');" class="flex-1 bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer hover:brightness-110 uppercase tracking-wider">
-                    <i class="fa-solid fa-file-arrow-up mr-2"></i> Submit Abstract Now
-                </button>
-                <button type="button" onclick="closeModal('page-load-prompt-modal')" class="px-6 py-3.5 bg-emerald-900/60 hover:bg-emerald-900 text-ivory-200 border border-gold-500/40 rounded-xl text-sm font-semibold transition-all cursor-pointer">
-                    Explore Conference
-                </button>
+            <div class="flex justify-between items-center">
+                <span class="text-gold-300">Conference Dates:</span>
+                <strong class="text-amber-300">December 23–25, 2026</strong>
             </div>
         </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button type="button" onclick="closeModal('page-load-prompt-modal'); openModal('abstract-modal');" class="flex-1 bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-emerald-950 font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer hover:brightness-110 uppercase tracking-wider">
+                <i class="fa-solid fa-file-arrow-up mr-2"></i> Submit Abstract Now
+            </button>
+            <button type="button" onclick="closeModal('page-load-prompt-modal')" class="px-6 py-3.5 bg-emerald-900/60 hover:bg-emerald-900 text-ivory-200 border border-gold-500/40 rounded-xl text-sm font-semibold transition-all cursor-pointer">
+                Explore Conference
+            </button>
+        </div>
     </div>
-
+</div>
     <!-- Top Announcement Bar -->
     <!-- Top Announcement Bar -->
     <div class="bg-emerald-950 text-gold-300 border-b border-gold-500/30 text-xs sm:text-sm py-2 px-4 relative z-40">
